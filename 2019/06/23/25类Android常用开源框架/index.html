@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>25类Android常用开源框架 | 黄文镔的博客 | 完美运用所学的一切</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#212121">
+    
+    
+    <meta name="keywords" content="Android,框架,资源">
+    <meta name="description" content="工欲善其事，必先利其器！开源框架奉上，支持开源，不造轮子，巨人带飞！持续更新，让开发更顺利。">
+<meta name="keywords" content="Android,框架,资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="25类Android常用开源框架">
+<meta property="og:url" content="http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/index.html">
+<meta property="og:site_name" content="黄文镔的博客">
+<meta property="og:description" content="工欲善其事，必先利其器！开源框架奉上，支持开源，不造轮子，巨人带飞！持续更新，让开发更顺利。">
+<meta property="og:locale" content="CN">
+<meta property="og:updated_time" content="2019-07-17T07:55:05.296Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="25类Android常用开源框架">
+<meta name="twitter:description" content="工欲善其事，必先利其器！开源框架奉上，支持开源，不造轮子，巨人带飞！持续更新，让开发更顺利。">
+    
+        <link rel="alternate" type="application/atom+xml" title="黄文镔的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄文镔</h5>
+          <a href="mailto:2509246913@qq.com" title="2509246913@qq.com" class="mail">2509246913@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hwb0011" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/hwb0011" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">25类Android常用开源框架</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">25类Android常用开源框架</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-23T03:41:22.000Z" itemprop="datePublished" class="page-time">
+  2019-06-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/开发资源/">开发资源</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-图片加载，缓存，处理"><span class="post-toc-text">1. 图片加载，缓存，处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-图片裁剪"><span class="post-toc-text">2. 图片裁剪</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-图片选择"><span class="post-toc-text">3. 图片选择</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-图片转换，压缩，滤镜"><span class="post-toc-text">4. 图片转换，压缩，滤镜</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-高斯模糊，毛玻璃，图片模糊"><span class="post-toc-text">5. 高斯模糊，毛玻璃，图片模糊</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-缓存"><span class="post-toc-text">6. 缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-网络请求"><span class="post-toc-text">7. 网络请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-网络解析"><span class="post-toc-text">8. 网络解析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-数据库"><span class="post-toc-text">9. 数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-依赖注入"><span class="post-toc-text">10. 依赖注入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-图表Chart"><span class="post-toc-text">11. 图表Chart</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12-后台处理"><span class="post-toc-text">12. 后台处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-事件总线"><span class="post-toc-text">13. 事件总线</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14-响应式编程"><span class="post-toc-text">14. 响应式编程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#15-Log框架"><span class="post-toc-text">15. Log框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#16-测试框架"><span class="post-toc-text">16. 测试框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#17-调试框架"><span class="post-toc-text">17. 调试框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18-性能优化"><span class="post-toc-text">18. 性能优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#19-热修复"><span class="post-toc-text">19. 热修复</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20-二维码"><span class="post-toc-text">20. 二维码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21-多媒体"><span class="post-toc-text">21. 多媒体</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#22-汉语转拼音"><span class="post-toc-text">22. 汉语转拼音</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#23-下载"><span class="post-toc-text">23. 下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#24-动画"><span class="post-toc-text">24. 动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#25-Android选择器类库"><span class="post-toc-text">25. Android选择器类库</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-25类Android常用开源框架" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">25类Android常用开源框架</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-23 11:41:22" datetime="2019-06-23T03:41:22.000Z" itemprop="datePublished">2019-06-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/开发资源/">开发资源</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>工欲善其事，必先利其器！开源框架奉上，支持开源，不造轮子，巨人带飞！持续更新，让开发更顺利。</p>
+</blockquote>
+<a id="more"></a>
+
+
+
+<h2 id="1-图片加载，缓存，处理"><a href="#1-图片加载，缓存，处理" class="headerlink" title="1. 图片加载，缓存，处理"></a>1. 图片加载，缓存，处理</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/nostra13/Android-Universal-Image-Loader" target="_blank" rel="noopener">Android Universal Image Loader</a></td>
+<td>一个强大的加载，缓存，展示图片的库，<strong>已过时</strong></td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/picasso" target="_blank" rel="noopener">Picasso</a></td>
+<td>一个强大的图片下载与缓存的库</td>
+</tr>
+<tr>
+<td><a href="https://github.com/facebook/fresco" target="_blank" rel="noopener">Fresco</a></td>
+<td>一个用于管理图像和他们使用的内存的库</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bumptech/glide" target="_blank" rel="noopener">Glide</a></td>
+<td>一个图片加载和缓存的库，使用的App有：网易新闻</td>
+</tr>
+<tr>
+<td><a href="https://github.com/florent37/GlidePalette" target="_blank" rel="noopener">GlidePalette</a></td>
+<td>Android Lollipop Palette is now easy to use with Glide</td>
+</tr>
+<tr>
+<td><a href="https://github.com/florent37/PicassoPalette" target="_blank" rel="noopener">PicassoPalette</a></td>
+<td>Android Lollipop Palette is now easy to use with Picasso</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wasabeef/picasso-transformations" target="_blank" rel="noopener">Picasso-transformations</a></td>
+<td>一个为Picasso提供多种图片变换的库</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wasabeef/glide-transformations" target="_blank" rel="noopener">Glide-transformations</a></td>
+<td>一个为Glide提供多种图片变换的库</td>
+</tr>
+</tbody></table>
+<h2 id="2-图片裁剪"><a href="#2-图片裁剪" class="headerlink" title="2. 图片裁剪"></a>2. 图片裁剪</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/Yalantis/uCrop" target="_blank" rel="noopener">uCrop</a></td>
+<td>Image Cropping Library for Android，使用的App有：薄荷，哔哩哔哩</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jdamcd/android-crop" target="_blank" rel="noopener">android-crop</a></td>
+<td>图片裁剪，使用的App有：网易新闻，芒果TV</td>
+</tr>
+<tr>
+<td><a href="https://github.com/edmodo/cropper" target="_blank" rel="noopener">cropper</a></td>
+<td>图片裁剪开源框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArthurHub/Android-Image-Cropper" target="_blank" rel="noopener">Android-Image-Cropper</a></td>
+<td>Image Cropping Library for Android, optimized for Camera / Gallery</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ryanhoo/PhotoCropper" target="_blank" rel="noopener">PhotoCropper</a></td>
+<td>Android 大图片裁剪终极解决方案</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lvillani/android-cropimage" target="_blank" rel="noopener">android-cropimage</a></td>
+<td>CropImage Activity from Gallery.apk packaged as a reusable Android library</td>
+</tr>
+<tr>
+<td><a href="https://github.com/albinmathew/PhotoCrop" target="_blank" rel="noopener">PhotoCrop</a></td>
+<td>A Library which can be used to crop images in Android similar to Facebook and Telegram，使用的App有：快手</td>
+</tr>
+</tbody></table>
+<h2 id="3-图片选择"><a href="#3-图片选择" class="headerlink" title="3. 图片选择"></a>3. 图片选择</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/lovetuzitong/MultiImageSelector" target="_blank" rel="noopener">MultiImageSelector</a></td>
+<td>图片选择，使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bingoogolapple/BGAPhotoPicker-Android" target="_blank" rel="noopener">BGAPhotoPicker-Android</a></td>
+<td>Android 图片选择、预览、九宫格图片控件、拖拽排序九宫格图片控件</td>
+</tr>
+<tr>
+<td><a href="https://github.com/crazycodeboy/TakePhoto" target="_blank" rel="noopener">TakePhoto</a></td>
+<td>轻量级Android照片处理框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/FinalTeam/RxGalleryFinal" target="_blank" rel="noopener">RxGalleryFinal</a></td>
+<td>Android图片单选/多选、拍照、裁剪、压缩。视频选择和录制。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Bilibili/boxing" target="_blank" rel="noopener">boxing</a></td>
+<td>一个多媒体选择器库，B站出品。可以选择一张或者多张图片，提供预览和裁剪功能。同样支持gif图，选择视频和图像压缩功能。</td>
+</tr>
+</tbody></table>
+<h2 id="4-图片转换，压缩，滤镜"><a href="#4-图片转换，压缩，滤镜" class="headerlink" title="4. 图片转换，压缩，滤镜"></a>4. 图片转换，压缩，滤镜</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/CyberAgent/android-gpuimage" target="_blank" rel="noopener">Android-gpuimage</a></td>
+<td>一个开源的基于GPU的图像处理库，提供各种各样的图像处理滤镜，并且支持照相机和摄像机的实时滤镜，使用的App有：快手</td>
+</tr>
+<tr>
+<td><a href="https://github.com/chrisbanes/PhotoView" target="_blank" rel="noopener">photoview</a></td>
+<td>使用的App有：薄荷,网易新闻</td>
+</tr>
+<tr>
+<td><a href="https://github.com/hdodenhof/CircleImageView" target="_blank" rel="noopener">circleimageview</a></td>
+<td>圆形图片，使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vinc3m1/RoundedImageView" target="_blank" rel="noopener">RoundedImageView</a></td>
+<td>圆形图片，使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pungrue26/SelectableRoundedImageView" target="_blank" rel="noopener">SelectableRoundedImageView</a></td>
+<td>Android ImageView that supports different radii on each corner</td>
+</tr>
+<tr>
+<td><a href="https://github.com/koral--/android-gif-drawable" target="_blank" rel="noopener">android-gif-drawable</a></td>
+<td>gif图片，使用的App有：网易新闻，快手</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Curzibn/Luban" target="_blank" rel="noopener">Luban</a></td>
+<td>可能是最接近微信朋友圈的图片压缩算法</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zetbaitsu/Compressor" target="_blank" rel="noopener">Compressor</a></td>
+<td>Compressor is a lightweight and powerful android image compression library</td>
+</tr>
+</tbody></table>
+<h2 id="5-高斯模糊，毛玻璃，图片模糊"><a href="#5-高斯模糊，毛玻璃，图片模糊" class="headerlink" title="5. 高斯模糊，毛玻璃，图片模糊"></a>5. 高斯模糊，毛玻璃，图片模糊</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/kikoso/android-stackblur" target="_blank" rel="noopener">android-stackblur</a></td>
+<td>Android StackBlur is a library that can perform a blurry effect on a Bitmap based on a gradient or radius, and return the result. The library is based on the code of Mario Klingemann.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wasabeef/Blurry" target="_blank" rel="noopener">Blurry</a></td>
+<td>Blurry is an easy blur library for Android</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wonderkiln/blurkit-android" target="_blank" rel="noopener">blurkit-android</a></td>
+<td>The missing Android blurring library. Fast blur-behind layout that parallels iOS.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Dimezis/BlurView" target="_blank" rel="noopener">BlurView</a></td>
+<td>Dynamic iOS-like blur of underlying Views for Android</td>
+</tr>
+<tr>
+<td><a href="https://github.com/qiujuer/ImageBlurring" target="_blank" rel="noopener">ImageBlurring</a></td>
+<td>Android blurring image(bitmap) by java and jni</td>
+</tr>
+</tbody></table>
+<h2 id="6-缓存"><a href="#6-缓存" class="headerlink" title="6. 缓存"></a>6. 缓存</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LruCache</td>
+<td>Android原生API，内存缓存</td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/DiskLruCache" target="_blank" rel="noopener">DiskLruCache</a></td>
+<td>Java实现基于LRU的磁盘缓存</td>
+</tr>
+<tr>
+<td><a href="https://github.com/yangfuhai/ASimpleCache" target="_blank" rel="noopener">ASimpleCache</a></td>
+<td>一个为android制定的轻量级的开源缓存框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/hongyangAndroid/base-diskcache" target="_blank" rel="noopener">base-diskcache</a></td>
+<td>Android 缓存库，融合了DiskLruCache和ASimpleCache</td>
+</tr>
+</tbody></table>
+<h2 id="7-网络请求"><a href="#7-网络请求" class="headerlink" title="7. 网络请求"></a>7. 网络请求</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://hc.apache.org/httpclient-3.x/" target="_blank" rel="noopener">httpclient</a></td>
+<td>apache开源的网络请求框架，<strong>已过时</strong></td>
+</tr>
+<tr>
+<td><a href="https://loopj.com/android-async-http/doc/com/loopj/android/http/AsyncHttpClient.html" target="_blank" rel="noopener">AsyncHttpClient</a></td>
+<td>基于httpclient封装，<strong>已过时</strong></td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">OkHttp</a></td>
+<td>Square出品，一个Http与Http/2的客户端</td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/retrofit" target="_blank" rel="noopener">Retrofit</a></td>
+<td>Square出品，类型安全的Http客户端</td>
+</tr>
+<tr>
+<td><a href="https://android.googlesource.com/platform/frameworks/volley" target="_blank" rel="noopener">Volley</a></td>
+<td>Google推出的Android异步网络请求框架和图片加载框架，使用的App有：网易新闻</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>从Android 6.0 开始，Google删除了apache的开源网络请求框架httpclient，所以基于httpclient的AsyncHttpClient也不推荐使用了。<br>Volley适合那些请求频繁但数据量不大的场景，不适用于大数据的请求，比如下载文件。<br>Android 6.0 后，Android开始使用OkHttp，而Retrofit是一个网络代理框架，可以更简单的使用OkHttp。</p>
+</blockquote>
+<h2 id="8-网络解析"><a href="#8-网络解析" class="headerlink" title="8. 网络解析"></a>8. 网络解析</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/google/gson" target="_blank" rel="noopener">Gson</a></td>
+<td>一个Java序列化/反序列化库，可以将JSON和java对象互相转换</td>
+</tr>
+<tr>
+<td><a href="https://github.com/codehaus/jackson" target="_blank" rel="noopener">Jackson</a></td>
+<td>Jackson可以轻松地将Java对象转换成json对象和xml文档，同样也可以将json、xml转换成Java对象</td>
+</tr>
+<tr>
+<td><a href="https://github.com/alibaba/fastjson" target="_blank" rel="noopener">Fastjson</a></td>
+<td>Java上一个快速的JSON解析器/生成器</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/htmlparser/" target="_blank" rel="noopener">HtmlPaser</a></td>
+<td>一种用来解析单个独立html或嵌套html的方式</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jhy/jsoup" target="_blank" rel="noopener">Jsoup</a></td>
+<td>一个以最好的DOM，CSS和jQuery解析html的库</td>
+</tr>
+</tbody></table>
+<h2 id="9-数据库"><a href="#9-数据库" class="headerlink" title="9. 数据库"></a>9. 数据库</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://sourceforge.net/projects/ormlite/files/releases/com/j256/ormlite/" target="_blank" rel="noopener">OrmLite</a></td>
+<td>JDBC和Android的轻量级ORM java包</td>
+</tr>
+<tr>
+<td><a href="https://github.com/satyan/sugar" target="_blank" rel="noopener">Sugar</a></td>
+<td>用超级简单的方法处理Android数据库</td>
+</tr>
+<tr>
+<td><a href="https://github.com/greenrobot/greenDAO" target="_blank" rel="noopener">GreenDAO</a></td>
+<td>一种轻快地将对象映射到SQLite数据库的ORM解决方案，使用的App有：薄荷，京东</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pardom/ActiveAndroid" target="_blank" rel="noopener">ActiveAndroid</a></td>
+<td>以活动记录方式为Android SQLite提供持久化</td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/sqlbrite" target="_blank" rel="noopener">SQLBrite</a></td>
+<td>SQLiteOpenHelper 和ContentResolver的轻量级包装</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sqlcipher/android-database-sqlcipher" target="_blank" rel="noopener">android-database-sqlcipher</a></td>
+<td>数据库加密</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pushtorefresh/storio" target="_blank" rel="noopener">storio</a></td>
+<td>Beautiful API for SQLiteDatabase and ContentResolver</td>
+</tr>
+<tr>
+<td><a href="https://github.com/realm/realm-java" target="_blank" rel="noopener">realm-java</a></td>
+<td>移动数据库，高性能数据库：一个SQLite和ORM的替换品</td>
+</tr>
+<tr>
+<td><a href="https://github.com/greenrobot/ObjectBox" target="_blank" rel="noopener">ObjectBox</a></td>
+<td>相信不少人都用过GreenDao和EventBus，这两库都是greenrobot公司出品。ObjectBox也是该公司出品。GreenDao号称是最快的与SQLite的对象关系映射（ORM）。但是自从2011年以来，公司声称发现了许多的缺陷，有很多问题影响了性能。所以开发出另外一套性能最好且易用的NoSQL数据库，优于其他数据库5-15倍的性能。</td>
+</tr>
+</tbody></table>
+<h2 id="10-依赖注入"><a href="#10-依赖注入" class="headerlink" title="10. 依赖注入"></a>10. 依赖注入</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="noopener">ButterKnife</a></td>
+<td>将Android视图和回调方法绑定到字段和方法上</td>
+</tr>
+<tr>
+<td><a href="https://github.com/google/dagger" target="_blank" rel="noopener">Dagger2</a></td>
+<td>一个Android和java快速依赖注射器</td>
+</tr>
+<tr>
+<td><a href="https://github.com/androidannotations/androidannotations" target="_blank" rel="noopener">AndroidAnotations</a></td>
+<td>快速安卓开发。易于维护</td>
+</tr>
+<tr>
+<td><a href="https://github.com/roboguice/roboguice" target="_blank" rel="noopener">RoboGuice</a></td>
+<td>Android平台的Google Guice <strong>已退役</strong></td>
+</tr>
+<tr>
+<td><a href="https://github.com/google/guice" target="_blank" rel="noopener">guice</a></td>
+<td>Google开发的依赖注入框架</td>
+</tr>
+</tbody></table>
+<h2 id="11-图表Chart"><a href="#11-图表Chart" class="headerlink" title="11. 图表Chart"></a>11. 图表Chart</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/diogobernardino/WilliamChart" target="_blank" rel="noopener">WilliamChart</a></td>
+<td>创建图表的Android库</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">HelloCharts</a></td>
+<td>兼容到API8的Android图表库，使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a></td>
+<td>一个强大的Android图表视图/图形库，使用的App有：春雨医生</td>
+</tr>
+</tbody></table>
+<h2 id="12-后台处理"><a href="#12-后台处理" class="headerlink" title="12. 后台处理"></a>12. 后台处理</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/square/tape" target="_blank" rel="noopener">Tape</a></td>
+<td>一个轻快的，事务性的，基于文件的FIFO的库</td>
+</tr>
+<tr>
+<td><a href="https://github.com/yigit/android-priority-jobqueue" target="_blank" rel="noopener">Android Priority Job Queue</a></td>
+<td>一个专门为Android轻松调度任务的工作队列</td>
+</tr>
+</tbody></table>
+<h2 id="13-事件总线"><a href="#13-事件总线" class="headerlink" title="13. 事件总线"></a>13. 事件总线</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/greenrobot/EventBus" target="_blank" rel="noopener">EventBus</a></td>
+<td>安卓优化的事件总线，简化了活动、片段、线程、服务等的通信，使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/otto" target="_blank" rel="noopener">Otto</a></td>
+<td>一个基于Guava的增强的事件总线</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eleme/HermesEventBus" target="_blank" rel="noopener">HermesEventBus</a></td>
+<td>一个基于EventBus的、能在进程间发送和接收event的库，在IPC或者插件开发中非常有用</td>
+</tr>
+</tbody></table>
+<h2 id="14-响应式编程"><a href="#14-响应式编程" class="headerlink" title="14. 响应式编程"></a>14. 响应式编程</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava</a></td>
+<td>JVM上的响应式扩展</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ReactiveX/RxJavaJoins" target="_blank" rel="noopener">RxJavaJoins</a></td>
+<td>为RxJava提供Joins操作</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="noopener">RxAndroid</a></td>
+<td>Android上的响应式扩展，在RxJava基础上添加了Android线程调度</td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="noopener">RxBinding</a></td>
+<td>提供用RxJava绑定Android UI的API</td>
+</tr>
+<tr>
+<td><a href="https://github.com/google/agera" target="_blank" rel="noopener">Agera</a></td>
+<td>Android上的响应式编程</td>
+</tr>
+<tr>
+<td><a href="https://github.com/trello/RxLifecycle" target="_blank" rel="noopener">RxLifecycle</a></td>
+<td>Lifecycle handling APIs for Android apps using RxJava</td>
+</tr>
+</tbody></table>
+<h2 id="15-Log框架"><a href="#15-Log框架" class="headerlink" title="15. Log框架"></a>15. Log框架</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/orhanobut/logger" target="_blank" rel="noopener">Logger</a></td>
+<td>简单，漂亮，强大的Android日志工具</td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/hugo" target="_blank" rel="noopener">Hugo</a></td>
+<td>在调试版本上注解的触发方法进行日志记录</td>
+</tr>
+<tr>
+<td><a href="https://github.com/JakeWharton/timber" target="_blank" rel="noopener">Timber</a></td>
+<td>一个小的，可扩展的日志工具</td>
+</tr>
+</tbody></table>
+<h2 id="16-测试框架"><a href="#16-测试框架" class="headerlink" title="16. 测试框架"></a>16. 测试框架</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/mockito/mockito" target="_blank" rel="noopener">Mockito</a></td>
+<td>Java编写的Mocking单元测试框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/RobotiumTech/robotium" target="_blank" rel="noopener">Robotium</a></td>
+<td>Android UI 测试</td>
+</tr>
+<tr>
+<td><a href="https://github.com/robolectric/robolectric" target="_blank" rel="noopener">Robolectric</a></td>
+<td>Android单元测试框架</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Android自带很多测试工具：JUnit，Monkeyrunner，UiAutomator，Espresso等。</p>
+</blockquote>
+<h2 id="17-调试框架"><a href="#17-调试框架" class="headerlink" title="17. 调试框架"></a>17. 调试框架</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/facebook/stetho" target="_blank" rel="noopener">Stetho</a></td>
+<td>调试Android应用的桥梁，使得可以利用Chrome开发者工具进行调试</td>
+</tr>
+</tbody></table>
+<h2 id="18-性能优化"><a href="#18-性能优化" class="headerlink" title="18. 性能优化"></a>18. 性能优化</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/square/leakcanary" target="_blank" rel="noopener">LeakCanary</a></td>
+<td>内存泄漏检测工具</td>
+</tr>
+<tr>
+<td><a href="http://blog.zhaiyifan.cn/2016/01/16/BlockCanaryTransparentPerformanceMonitor/?utm_source=tuicool&utm_medium=referral" target="_blank" rel="noopener">BlockCanary</a></td>
+<td>轻松找出Android App界面卡顿元凶</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ACRA/acra" target="_blank" rel="noopener">ACRA</a></td>
+<td>Android应用程序崩溃报告</td>
+</tr>
+<tr>
+<td><a href="https://github.com/google/guava" target="_blank" rel="noopener">Google Guava</a></td>
+<td>Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例如：集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、并发库 [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等。 所有这些工具每天都在被Google的工程师应用在产品服务中。</td>
+</tr>
+<tr>
+<td><a href="https://developers.google.cn/protocol-buffers/" target="_blank" rel="noopener">google protobuf</a></td>
+<td>由google开发，并且在google内部使用。Protobuf的作用和xml、json是一回事，但他是二进制格式，性能好、效率高。</td>
+</tr>
+</tbody></table>
+<h2 id="19-热修复"><a href="#19-热修复" class="headerlink" title="19. 热修复"></a>19. 热修复</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/Tencent/tinker" target="_blank" rel="noopener">tinker</a></td>
+<td>腾讯开源的一个热修复框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/alibaba/AndFix" target="_blank" rel="noopener">AndFix</a></td>
+<td>alibaba热修复框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/alibaba/dexposed" target="_blank" rel="noopener">dexposed</a></td>
+<td>alibaba热修复框架</td>
+</tr>
+</tbody></table>
+<h2 id="20-二维码"><a href="#20-二维码" class="headerlink" title="20. 二维码"></a>20. 二维码</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/zxing/zxing" target="_blank" rel="noopener">Zxing</a></td>
+<td>一个二维码开源框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dm77/barcodescanner" target="_blank" rel="noopener">barcodescanner</a></td>
+<td>使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bingoogolapple/BGAQRCode-Android" target="_blank" rel="noopener">BGAQRCode-Android</a></td>
+<td>扫描二维码、扫描条形码、相册获取图片后识别、生成带 Logo 二维码、支持微博微信 QQ 二维码扫描样式</td>
+</tr>
+<tr>
+<td><a href="https://github.com/journeyapps/zxing-android-embedded/tree/master/zxing-android-embedded/src/com/journeyapps/barcodescanner" target="_blank" rel="noopener">zxing-android-embedded</a></td>
+<td>使用的App有：春雨医生，芒果TV</td>
+</tr>
+</tbody></table>
+<h2 id="21-多媒体"><a href="#21-多媒体" class="headerlink" title="21. 多媒体"></a>21. 多媒体</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">ijkplayer</a></td>
+<td>Bilibili开源的视频播放器</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Bilibili/DanmakuFlameMaster" target="_blank" rel="noopener">DanmakuFlameMaster</a></td>
+<td>Android开源弹幕引擎·烈焰弹幕使，使用的App有：网易新闻</td>
+</tr>
+<tr>
+<td><a href="https://github.com/yixia/VitamioBundle" target="_blank" rel="noopener">Vitamio</a></td>
+<td>一款全能多媒体开发框架，全面支持硬件解码与 GPU 渲染</td>
+</tr>
+<tr>
+<td><a href="https://github.com/FFmpeg/FFmpeg" target="_blank" rel="noopener">FFmpeg</a></td>
+<td>一个基于C语言的多媒体开源框架</td>
+</tr>
+<tr>
+<td><a href="https://cloud.baidu.com/doc/MCT/s/Ajwvz4yzr/" target="_blank" rel="noopener">百度智能云播放器</a></td>
+<td>百度智能云推出的 Android 平台视频播放器</td>
+</tr>
+<tr>
+<td><a href="https://github.com/google/ExoPlayer" target="_blank" rel="noopener">ExoPlayer</a></td>
+<td>Google开源的视频播放器</td>
+</tr>
+</tbody></table>
+<h2 id="22-汉语转拼音"><a href="#22-汉语转拼音" class="headerlink" title="22. 汉语转拼音"></a>22. 汉语转拼音</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/belerweb/pinyin4j" target="_blank" rel="noopener">pinyin4j</a></td>
+<td>A copy of <a href="http://sourceforge.net/projects/pinyin4j" target="_blank" rel="noopener">http://sourceforge.net/projects/pinyin4j</a>, then deploy it to maven central repository.</td>
+</tr>
+<tr>
+<td><a href="http://pinyin4j.sourceforge.net/" target="_blank" rel="noopener">TinyPinyin</a></td>
+<td>适用于Java和Android的快速、低内存占用的汉字转拼音库。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/handsomezhou/PinyinSearchLibrary" target="_blank" rel="noopener">PinyinSearchLibrary</a></td>
+<td>The library of PinyinSearch,a Java Library which provide data parsing methods, data matching method and so on for T9 search and Qwerty search.PinyinSearch = T9Search + QwertySearch</td>
+</tr>
+<tr>
+<td><a href="https://code.google.com/archive/p/pinyin4android/" target="_blank" rel="noopener">pinyin4android</a></td>
+<td>唯品会使用，2011年出了1.0版本后没更新了</td>
+</tr>
+</tbody></table>
+<h2 id="23-下载"><a href="#23-下载" class="headerlink" title="23. 下载"></a>23. 下载</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/Aspsine/MultiThreadDownload" target="_blank" rel="noopener">MultiThreadDownload</a></td>
+<td>使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lingochamp/FileDownloader" target="_blank" rel="noopener">FileDownloader</a></td>
+<td>Android 文件下载引擎，稳定、高效、灵活、简单易用</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ssseasonnn/RxDownload" target="_blank" rel="noopener">RxDownload</a></td>
+<td>基于RxJava和Retrofit打造的下载工具, 支持多线程下载和断点续传, 智能判断是否支持断点续传等功能</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wlfcolin/file-downloader" target="_blank" rel="noopener">file-downloader</a></td>
+<td>安卓上轻量级Http/Https文件下载框架，我的目标是让安卓文件下载越简单越好，尽可能以最简洁明了的方式完成复杂需求。</td>
+</tr>
+</tbody></table>
+<h2 id="24-动画"><a href="#24-动画" class="headerlink" title="24. 动画"></a>24. 动画</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/facebook/rebound" target="_blank" rel="noopener">facebook:rebound</a></td>
+<td>A Java library that models spring dynamics and adds real world physics to your app</td>
+</tr>
+<tr>
+<td><a href="https://github.com/florent37/ViewAnimator" target="_blank" rel="noopener">ViewAnimator</a></td>
+<td>A fluent Android animation library</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lgvalle/Material-Animations" target="_blank" rel="noopener">Material-Animations</a></td>
+<td>Android Transition animations explanation with examples</td>
+</tr>
+<tr>
+<td><a href="https://github.com/daimajia/AndroidViewAnimations" target="_blank" rel="noopener">AndroidViewAnimations</a></td>
+<td>Cute view animation collection.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/nhaarman/ListViewAnimations" target="_blank" rel="noopener">ListViewAnimations</a></td>
+<td>An Android library which allows developers to easily add animations to ListView items</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wasabeef/recyclerview-animators" target="_blank" rel="noopener">recyclerview-animators</a></td>
+<td>An Android Animation library which easily add itemanimator to RecyclerView items.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/gabrielemariotti/RecyclerViewItemAnimators" target="_blank" rel="noopener">RecyclerViewItemAnimators</a></td>
+<td>An Android library which provides simple Item animations to RecyclerView items</td>
+</tr>
+<tr>
+<td><a href="https://github.com/daimajia/AnimationEasingFunctions" target="_blank" rel="noopener">AnimationEasingFunctions</a></td>
+<td>Android Animation Easing Functions. Let’s make animation more real!</td>
+</tr>
+<tr>
+<td><a href="https://github.com/z56402344/BaseAnimation" target="_blank" rel="noopener">BaseAnimation</a></td>
+<td>BaseAnimation收集网络Android相关动画集合，自定义控件等，近200多种源码</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kakajika/FragmentAnimations" target="_blank" rel="noopener">FragmentAnimations</a></td>
+<td>3D animations for support-v4 Fragment transition.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/alphamu/AnimatedEditText" target="_blank" rel="noopener">AnimatedEditText</a></td>
+<td>Androids EditText that animates the typed text. EditText is extended to create AnimatedEditText and a PinEntryEditText.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ToxicBakery/ViewPagerTransforms" target="_blank" rel="noopener">ViewPagerTransforms</a></td>
+<td>Library containing common animations needed for transforming ViewPager scrolling for Android v13+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/airbnb/lottie-android" target="_blank" rel="noopener">lottie-android</a></td>
+<td>Render After Effects animations natively on Android and iOS</td>
+</tr>
+</tbody></table>
+<h2 id="25-Android选择器类库"><a href="#25-Android选择器类库" class="headerlink" title="25. Android选择器类库"></a>25. Android选择器类库</h2><table>
+<thead>
+<tr>
+<th>框架名称</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/prolificinteractive/material-calendarview" target="_blank" rel="noopener">material-calendarview</a></td>
+<td>material design 风格的日历控件使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wdullaer/MaterialDateTimePicker" target="_blank" rel="noopener">MaterialDateTimePicker</a></td>
+<td>Pick a date or time on Android in style，使用的App有：薄荷</td>
+</tr>
+<tr>
+<td><a href="https://github.com/square/android-times-square" target="_blank" rel="noopener">android-times-square</a></td>
+<td>Standalone Android widget for picking a single date from a calendar view.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jdsjlzx/AndroidPicker" target="_blank" rel="noopener">AndroidPicker</a></td>
+<td>安卓选择器类库，包括日期时间选择器、单项选择器、地址选择器、颜色选择器、文件目录选择器、数字选择器、星座选择器等。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/saiwu-bigkoo/Android-PickerView" target="_blank" rel="noopener">Android-PickerView</a></td>
+<td>仿iOS的PickerView控件，有时间选择和选项选择并支持一二三级联动效果</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AigeStudio/WheelPicker" target="_blank" rel="noopener">WheelPicker</a></td>
+<td>Simple and fantastic wheel view in realistic effect for android.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/DroidNinja/Android-FilePicker" target="_blank" rel="noopener">Android-FilePicker</a></td>
+<td>Photopicker and document picker for android</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Carbs0126/NumberPickerView" target="_blank" rel="noopener">NumberPickerView</a></td>
+<td>another NumberPicker with more flexible attributes on Android platform</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Airsaid/Android-PickerView-Library" target="_blank" rel="noopener">Android-PickerView-Library</a></td>
+<td>Simple PickerView for Android</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-17T07:55:05.296Z" itemprop="dateUpdated">2019-07-17 15:55:05</time>
+</span><br>
+
+
+        
+        记录历程，回首过去，抓住点滴，迎接未来。进步就在于一行行没有被遗忘的代码，成功就在于一页页没有被踩死的文章。感谢您的支持，我是程序猿，我为梦想带盐！
+        
+    </div>
+    
+    <footer>
+        <a href="http://hwb0011.github.io">
+            <img src="/img/avatar.jpg" alt="黄文镔">
+            黄文镔
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/资源/">资源</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/&title=《25类Android常用开源框架》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/&title=《25类Android常用开源框架》 — 黄文镔的博客&source=
+工欲善其事，必先利其器！开源框架奉上，支持开源，不造轮子，巨人带飞！持续更新，让开发更顺利。
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《25类Android常用开源框架》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/16/Kotlin征途（一）：简单APP的制作/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Kotlin征途（一）：简单APP的制作</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '50c13be55e1505e5d611',
+          clientSecret: 'c81100c6fe66b456bbb56de82cb5b8cb835503d4',
+          repo: 'hwb0011.github.io',
+          owner: 'hwb0011',
+          admin: ['hwb0011'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄文镔 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/&title=《25类Android常用开源框架》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/&title=《25类Android常用开源框架》 — 黄文镔的博客&source=
+工欲善其事，必先利其器！开源框架奉上，支持开源，不造轮子，巨人带飞！持续更新，让开发更顺利。
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《25类Android常用开源框架》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/06/23/25类Android常用开源框架/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3a0W4iMQwF0P7/T9PXSoVwbcddtDrzhIDO5KRSYm789RVfjx/Xz3devf59Jd/Mv3P5wsPDwxsM/fzI6oPP75/vn0zBecx4eHh427zz4PIF/dUQN7afaELx8PDwPoCXl9FnWF4on9l4eHh4/wevV0D3Ngk8PDy8f8XL49fzgCavq59ezlrw8PDwOlXu4tDvvl4538PDw8Mbn6pXj7jyZX1jM3gyWjw8PLwFXrVc7rUUVBf0SbmMh4eHt82bNwRUA9lqzJGHv0/uiYeHh7fGKxwmxcdaSQNWMqF5OV7uTcDDw8Nr8SYB7nki8uHmm1A+rXh4eHh7vEmjwBmWF+J5Ud5c9PHw8PAWeL0gdR62zsv0N/8ePDw8vDVe4Q8GQcDdaYo2Mzw8PLwFXrUI3ks+kgCi+UQ8PDy8q7xHcFVbqXplcTU9iKIKPDw8vDVetemq+mk1kE3K5ehTPDw8vD/k9QKIvIWrOvRm4Y6Hh4e3wKsWrJPAN2fnbQfXshY8PDy8Ys7ZW+J7TQP5U6rbyZN74uHh4S3wqof9G81SvWav3iaEh4eHd4tXjQ/O7/SK7OqmkjQf4OHh4W3wbi33vYW+t+gX0lo8PDy8BV5h9yjGqXkTQHUryrcoPDw8vD1e76bz2HcSTBRiXDw8PLw13mQR7zUiTEKNchmNh4eHt8DLb3GrDevW1LyZCDw8PLw1Xn7c1SuRL/Qy3DoGw8PDwxvwHsUrX+jzw628Bi6HEXh4eHgLvOqC25uO3kRMJqi5n+Dh4eHFvHk7VK8FYT7FhW4IPDw8vAVe9eQoCSby8jqPM5pZCx4eHt7H8JIiON9UJvd5OSl4eHh4H8PLm7R6yOqx2eWSGg8PD+9SGFENAqrBa+9w681T8PDw8BZ4vR/5k8A3iTDWz/Tw8PDwOrxvInEr8Jci73AAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
