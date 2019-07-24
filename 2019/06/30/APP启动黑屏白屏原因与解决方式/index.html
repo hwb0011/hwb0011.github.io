@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>APP启动黑屏白屏原因与解决方式 | 黄文镔的博客 | 完美运用所学的一切</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#212121">
+    
+    
+    <meta name="keywords" content="Android,优化">
+    <meta name="description" content="我们在桌面启动自己辛苦创建的APP时，总是会看到黑屏或是白屏现象，这让人的体验感觉不是很好，看看大厂的APP为什么不会有这个现象？有问题就要解决，即便不是BUG，用户体验一样很重要。">
+<meta name="keywords" content="Android,优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APP启动黑屏白屏原因与解决方式">
+<meta property="og:url" content="http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/index.html">
+<meta property="og:site_name" content="黄文镔的博客">
+<meta property="og:description" content="我们在桌面启动自己辛苦创建的APP时，总是会看到黑屏或是白屏现象，这让人的体验感觉不是很好，看看大厂的APP为什么不会有这个现象？有问题就要解决，即便不是BUG，用户体验一样很重要。">
+<meta property="og:locale" content="CN">
+<meta property="og:image" content="http://hwb0011.github.io/img/img0630_01.jpg">
+<meta property="og:image" content="http://hwb0011.github.io/img/img0630_02.jpg">
+<meta property="og:updated_time" content="2019-07-24T08:40:51.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APP启动黑屏白屏原因与解决方式">
+<meta name="twitter:description" content="我们在桌面启动自己辛苦创建的APP时，总是会看到黑屏或是白屏现象，这让人的体验感觉不是很好，看看大厂的APP为什么不会有这个现象？有问题就要解决，即便不是BUG，用户体验一样很重要。">
+<meta name="twitter:image" content="http://hwb0011.github.io/img/img0630_01.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="黄文镔的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄文镔</h5>
+          <a href="mailto:2509246913@qq.com" title="2509246913@qq.com" class="mail">2509246913@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hwb0011" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/hwb0011" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">APP启动黑屏白屏原因与解决方式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">APP启动黑屏白屏原因与解决方式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-30T06:55:52.000Z" itemprop="datePublished" class="page-time">
+  2019-06-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/避坑指南/">避坑指南</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-APP启动黑-白屏的原因"><span class="post-toc-text">1. APP启动黑/白屏的原因</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-解决黑-白屏的方法"><span class="post-toc-text">2. 解决黑/白屏的方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-背景显示优化"><span class="post-toc-text">3. 背景显示优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-方法一优化"><span class="post-toc-text">3.1 方法一优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-方法二优化"><span class="post-toc-text">3.2 方法二优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-1-drawable的类型"><span class="post-toc-text">3.2.1 drawable的类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-2-LayerDrawable解决图片拉伸"><span class="post-toc-text">3.2.2 LayerDrawable解决图片拉伸</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-3-style主题优化"><span class="post-toc-text">3.2.3 style主题优化</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-APP启动黑屏白屏原因与解决方式" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">APP启动黑屏白屏原因与解决方式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-30 14:55:52" datetime="2019-06-30T06:55:52.000Z" itemprop="datePublished">2019-06-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/避坑指南/">避坑指南</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>我们在桌面启动自己辛苦创建的APP时，总是会看到黑屏或是白屏现象，这让人的体验感觉不是很好，看看大厂的APP为什么不会有这个现象？有问题就要解决，即便不是BUG，用户体验一样很重要。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-APP启动黑-白屏的原因"><a href="#1-APP启动黑-白屏的原因" class="headerlink" title="1. APP启动黑/白屏的原因"></a>1. APP启动黑/白屏的原因</h1><p>首先，我们需要知道一个APP启动时，屏幕上都会有什么。在我们的APP里，显示在屏幕上的自然是各个View了，而我们的View又都是在Activity的onCreate()方法中调用了setContentView()方法，传入了我们的layout文件，也就是我们理论上应该看到的Activity内容。但是Android系统在启动一个新的Activity时，首先进行的并不是绘制Activity的内容，我们来看看一个Activity的UI结构。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/img0630_01.jpg" alt="Activity UI结构" title>
+                </div>
+                <div class="image-caption">Activity UI结构</div>
+            </figure>
+
+<p>我们可以看到，一个Activity中在ContentView的外围还有PhoneWindow、DecorView、TitleView，当Activity进行绘制时会先绘制这三个View，这时ContentView还没加载进来，所以什么东西都看不到，系统会将屏幕填充主题默认的背景色，亮系主题填充白色，暗系主题填充黑色，就出现了Activity启动之前的黑/白屏现象。</p>
+<h1 id="2-解决黑-白屏的方法"><a href="#2-解决黑-白屏的方法" class="headerlink" title="2. 解决黑/白屏的方法"></a>2. 解决黑/白屏的方法</h1><p>刚才说了，系统会为屏幕填充主题默认的背景色，那么要解决这个问题就应该从屏幕的背景下手了。一想到背景，第一反应就是去layout里设置ContentView的background，但是系统并不会先加载ContentView，那有什么在系统绘制之前就能调整屏幕背景呢？</p>
+<p>注意，系统会填充主题默认的背景色，所以主题会在绘制之前加载，我们可以修改主题的背景达到目的。一般一个APP第一个启动的Activity都是Splash，作为一个Splash并不需要标题栏，而且普遍是全屏的。那么我们可以将主题进行修改一下，大概有两种方式：</p>
+<ol>
+<li>将主题背景变成透明的，这样在ContentView加载出来之前，我们会透过启动的Activity看到桌面，就不会有黑/白屏的现象。再把标题栏去掉，把Activity设置成全屏的，效果挺不错，缺点是如果启动的是一个有复杂耗时操作的Activity，那么会有一种延迟的感觉。</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"android:Theme.Light.NoActionBar"</span>&gt;</span>  </span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowIsTranslucent"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@android:color/transparent<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:WindowFullscreen"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将主题背景设置成一张图片，把标题栏去掉，把Activity设置成全屏的，这这样在ContentView加载出来之前，我们就能看到一张默认背景图，但是图片的屏幕适配问题就需要考虑了，主题里的背景图片会自动拉伸，可能会导致失真或者比例失调的问题。</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"android:Theme.Light.NoActionBar"</span>&gt;</span>  </span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@drawable/bg_splash<span class="tag">&lt;/<span class="name">item</span>&gt;</span>  </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:WindowFullscreen"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-背景显示优化"><a href="#3-背景显示优化" class="headerlink" title="3. 背景显示优化"></a>3. 背景显示优化</h1><p>这里再将上述解决方法进行优化，减少用户使用时不好的体验。（PS：当然你可以不做此优化，如果你想忽悠老板，把锅甩给Android系统、手机的硬件配置、UI的图给的不匹配屏幕等等）</p>
+<h2 id="3-1-方法一优化"><a href="#3-1-方法一优化" class="headerlink" title="3.1 方法一优化"></a>3.1 方法一优化</h2><p>方法一中的问题在于延迟感严重，那么我们需要做的就是尽量加快Splash的启动速度，在Splash中不加入任何逻辑操作，并且Application中任何的数据及开源框架的初始化方法都不应调用，当Splash启动完全后，在Splash的OnResume()方法中可以启动子线程进行各初始化操作，宁可让用户在背景图中等待，不要让用户看着手机桌面认为手机死机了。</p>
+<h2 id="3-2-方法二优化"><a href="#3-2-方法二优化" class="headerlink" title="3.2 方法二优化"></a>3.2 方法二优化</h2><p>方法二中的问题在于图片拉伸可能导致失真或者比例失调，使得界面不够美观。简单的方式就是建立各个drawable文件夹，覆盖所有的屏幕尺寸类型，每个文件夹下塞一张让UI做的合理的背景图。这种方法超级令人无语，UI的工作量较大，而且你也不可能覆盖所有的屏幕尺寸，比如这样：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/img0630_02.jpg" alt="超长的手机屏幕" title>
+                </div>
+                <div class="image-caption">超长的手机屏幕</div>
+            </figure>
+
+<p>那么怎样可以拥有更好的用户体验呢？这时候我们需要的是drawable。</p>
+<h3 id="3-2-1-drawable的类型"><a href="#3-2-1-drawable的类型" class="headerlink" title="3.2.1 drawable的类型"></a>3.2.1 drawable的类型</h3><p>在Android中，我们可以使用xml自定义一个drawable，用的最多的场景就是背景图了，Android系统的一些默认图标也都是用xml实现的，当然那涉及到了一些矢量图的知识。</p>
+<p>首先我们先了解一下drawable的类型，常见的几种有：<code>BitmapDrawable</code>、<code>ShapeDrawable</code>、<code>StateListDrawable</code>、<code>LevelListDrawable</code>、<code>LayerDrawable</code>、<code>TransitionDrawable</code>、<code>ScaleDrawable</code>、<code>AnimationDrawable</code>、<code>InsetDrawable</code>、<code>NinePatchDrawable</code>、<code>ClipDrawable</code>、<code>VectorDrawable</code>。</p>
+<p>这里我采用了LayerDrawable来解决图片拉伸的问题，其他的drawable以后再写一篇文章专门分析各个drawable。</p>
+<h3 id="3-2-2-LayerDrawable解决图片拉伸"><a href="#3-2-2-LayerDrawable解决图片拉伸" class="headerlink" title="3.2.2 LayerDrawable解决图片拉伸"></a>3.2.2 LayerDrawable解决图片拉伸</h3><p>LayerDrawable为什么能解决图片拉伸问题呢？这要从LayerDrawble的性质说起了：</p>
+<ol>
+<li><p>XML标签为layer-list</p>
+</li>
+<li><p>层次化的Drawable合集</p>
+</li>
+<li><p>可以包含多个item，每个item表示一个Drawable</p>
+</li>
+<li><p>item中可以通过android:drawable直接引用资源</p>
+</li>
+<li><p>item中可以通过android:top等指定相对于父节点的位置</p>
+</li>
+</ol>
+<p>多个Drawable的层次化叠加，并且可以指定每个Drawable的位置，是不是和layout很像？一些简单的布局显示可以用LayerDrawble来完成，不过只能塞Drawable进去，文字什么的就不行了。</p>
+<p>那么我们来看一下一个可以很好适配屏幕的背景图改如何完成。首先在drawable文件夹下建立一个layer-list类型的drawable文件bg_splash.xml，随后写入如下代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:drawable</span>=<span class="string">"@drawable/bg"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:top</span>=<span class="string">"175dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bitmap</span> <span class="attr">android:gravity</span>=<span class="string">"top"</span> <span class="attr">android:src</span>=<span class="string">"@drawable/logo"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们在layer-list中放入了两个item：第一个是一整个页面的背景，可以是图片，但是笔者建议用纯色的ShapeDrawable，一定程度上减少内存开销并且无需考虑图片失真之类的问题；第二个是一个Bitmap，<code>&lt;bitmap&gt;</code>这个标签是按照图片大小插入一张图片，这样避免了图片在屏幕上的拉伸，通过<code>android:top</code>来指定这个item顶部的偏移距离，同样还可以指定<code>android:bottom</code>、<code>android:left</code>、<code>android:right</code>来定位item的位置，随后对<code>&lt;bitmap&gt;</code>的<code>android:gravity</code>设置为<code>top</code>，让logo可以显示在顶部。这样一个能随着屏幕进行适配并且不会失真的背景就做好了，按照方法二设置为<code>android:windowBackground</code>即可。</p>
+<h3 id="3-2-3-style主题优化"><a href="#3-2-3-style主题优化" class="headerlink" title="3.2.3 style主题优化"></a>3.2.3 style主题优化</h3><p>按照方法二的设定，整个App将使用我们制作的bg_splash作为背景，这时候如果不给每个Activity设置背景或者在使用虚拟键盘时，进入App之后屏幕上也会看到bg_splash出现在没有控件的位置，造成用户的疑惑或者反感。</p>
+<p>我们知道Activity也是可以设置主题的，那么我们可以给Application设置一个默认的主题AppTheme，然后给SplashActivity设置我们的全屏带背景的主题SplashTheme，这样在我们的SplashActivity中就可以迅速显示启动背景图，进入App中，在其他Activity中也不会出现启动背景图，最终的styles和AndroidManifest文件如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">styles.xml</span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@color/colorDefaultBg<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"SplashTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span>  </span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowFullscreen"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@drawable/bg_splash<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">AndroidManifest.xml</span><br><span class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">android:name</span>=<span class="string">".MyApplication"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:roundIcon</span>=<span class="string">"@mipmap/ic_launcher_round"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:allowBackup</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".SplashActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@style/SplashTheme"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:screenOrientation</span>=<span class="string">"portrait"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:configChanges</span>=<span class="string">"orientation|screenSize|keyboardHidden"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-24T08:40:51.831Z" itemprop="dateUpdated">2019-07-24 16:40:51</time>
+</span><br>
+
+
+        
+        记录历程，回首过去，抓住点滴，迎接未来。进步就在于一行行没有被遗忘的代码，成功就在于一页页没有被踩死的文章。感谢您的支持，我是程序猿，我为梦想带盐！
+        
+    </div>
+    
+    <footer>
+        <a href="http://hwb0011.github.io">
+            <img src="/img/avatar.jpg" alt="黄文镔">
+            黄文镔
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/优化/">优化</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/&title=《APP启动黑屏白屏原因与解决方式》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/&title=《APP启动黑屏白屏原因与解决方式》 — 黄文镔的博客&source=
+我们在桌面启动自己辛苦创建的APP时，总是会看到黑屏或是白屏现象，这让人的体验感觉不是很好，看看大厂的APP为什么不会有这个现象？有问题就要解决，即便不..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《APP启动黑屏白屏原因与解决方式》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/23/25类Android常用开源框架/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">25类Android常用开源框架</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '50c13be55e1505e5d611',
+          clientSecret: 'c81100c6fe66b456bbb56de82cb5b8cb835503d4',
+          repo: 'hwb0011.github.io',
+          owner: 'hwb0011',
+          admin: ['hwb0011'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄文镔 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/&title=《APP启动黑屏白屏原因与解决方式》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/&title=《APP启动黑屏白屏原因与解决方式》 — 黄文镔的博客&source=
+我们在桌面启动自己辛苦创建的APP时，总是会看到黑屏或是白屏现象，这让人的体验感觉不是很好，看看大厂的APP为什么不会有这个现象？有问题就要解决，即便不..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《APP启动黑屏白屏原因与解决方式》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/06/30/APP启动黑屏白屏原因与解决方式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aQW7cMBAEQP//0w6QU4BAUveQ1O6hdDJ2bYmlAznumZ+f+Pr9e93/fPXJv5/n97lfw+YLDw8Pb7T0q+uekfztPTL/nf/XEz0XDw8P7xivPQzuH3b/+To4WTMeHh7eN/Bm5XKLWSnB8fDw8L6N1z4+ORhWDic8PDy8z/KSMOKdiKEt67dlLXh4eHhdvrqhAfbmzx/o7+Hh4eHFTaz1iDY/QvJvo3Xi4eHhHeC10Woe8ual8KwELw4MPDw8vK28NoBYGcNaCSbaw+nh3MPDw8Nb4LWNpXahbXHchhFR0IyHh4f3Oi8vapNidxZtzIIPPDw8vHd4OWyl5b9SQCevGA8PD+8cr21xtRv0bMQqX8nD3+Lh4eG9wmuPirwplW/rSVkflft4eHh4h3ntzGc70pp/m3+Oh4eH9z5vJcxtm2R744x6tXh4eHibeG3L6kTokBxFbeyLh4eHd5qXb/HFrRfK8TaeuHyVeHh4eAd4yZVv4kmEMWunzah4eHh4p3ltCdtGtNvaWrOgGQ8PD28rb9cmniwleaHJ/YuDAQ8PD28rr20srY9YrTTS2uMKDw8P7xyvDVhno1R51NsGDQ8HAx4eHt4B3sqgwMp41t6W22UMgYeHh7eVl2/ieSNqpTSfBcoPcQYeHh7eAV4bGeTIZEH5U2bjXHh4eHgneG3ccCKAmEUVUayMh4eHd4w3CyDyzbodREgOj3roCg8PD2+Z91teM/yGej++28PoAB4eHt4yL7/atv2s1J4dSLPRLjw8PLwVXh4KtM3+NuSdjWcVYQQeHh7eVl4xBlqGvO3rm51deHh4eN/My+PaZKS1bbDVA154eHh4H+UVNy038dkBE6UseHh4eMd47Xafv5rZwGvbKrt8Ih4eHt4B3tK/+nFE276aWeE+ROLh4eGlvD/HyRg8y+qHBQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
