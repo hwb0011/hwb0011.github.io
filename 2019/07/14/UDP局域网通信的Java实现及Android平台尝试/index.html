@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     
 
     
@@ -22,17 +22,18 @@
     
     <meta name="keywords" content="Android,Java,UDP">
     <meta name="description" content="局域网通信已经很少被他人所提及了，我曾经还尝试过通过蓝牙构建通信网络，这次有机会尝试UDP局域网通信，在这里把一些基本过程和在Android平台上的问题记录一下。">
-<meta name="keywords" content="Android,Java,UDP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UDP局域网通信的Java实现及Android平台尝试">
-<meta property="og:url" content="http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;hwb0011.github.io&#x2F;2019&#x2F;07&#x2F;14&#x2F;UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95&#x2F;index.html">
 <meta property="og:site_name" content="黄文镔的博客">
 <meta property="og:description" content="局域网通信已经很少被他人所提及了，我曾经还尝试过通过蓝牙构建通信网络，这次有机会尝试UDP局域网通信，在这里把一些基本过程和在Android平台上的问题记录一下。">
-<meta property="og:locale" content="CN">
-<meta property="og:updated_time" content="2019-08-27T09:27:18.266Z">
+<meta property="article:published_time" content="2019-07-14T07:17:19.000Z">
+<meta property="article:modified_time" content="2019-08-27T09:27:18.266Z">
+<meta property="article:author" content="黄文镔">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="UDP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UDP局域网通信的Java实现及Android平台尝试">
-<meta name="twitter:description" content="局域网通信已经很少被他人所提及了，我曾经还尝试过通过蓝牙构建通信网络，这次有机会尝试UDP局域网通信，在这里把一些基本过程和在Android平台上的问题记录一下。">
     
         <link rel="alternate" type="application/atom+xml" title="黄文镔的博客" href="/atom.xml">
     
@@ -43,12 +44,12 @@
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.1.0"></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -68,42 +69,42 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 主页
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 归档
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories">
+              <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 分类
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/hwb0011" target="_blank">
+              <a href="https://github.com/hwb0011" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 GitHub
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/hwb0011" target="_blank">
+              <a href="http://www.weibo.com/hwb0011" target="_blank" >
                 <i class="icon icon-lg icon-weibo"></i>
                 微博
               </a>
@@ -150,7 +151,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工作之余/">工作之余</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/">工作之余</a></li></ul>
 
             
         </h5>
@@ -172,20 +173,21 @@
     </aside>
 
 
-<article id="post-UDP局域网通信的Java实现及Android平台尝试" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-UDP局域网通信的Java实现及Android平台尝试"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">UDP局域网通信的Java实现及Android平台尝试</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-07-14 15:17:19" datetime="2019-07-14T07:17:19.000Z" itemprop="datePublished">2019-07-14</time>
+            <time class="post-time" title="2019-07-14 15:17:19" datetime="2019-07-14T07:17:19.000Z"  itemprop="datePublished">2019-07-14</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工作之余/">工作之余</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/">工作之余</a></li></ul>
 
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
     <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
 </span>
 
@@ -294,7 +296,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UDP/">UDP</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UDP/" rel="tag">UDP</a></li></ul>
 
 
             
@@ -304,7 +306,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -314,23 +316,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&source=
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&source=
 局域网通信已经很少被他人所提及了，我曾经还尝试过通过蓝牙构建通信网络，这次有机会尝试UDP局域网通信，在这里把一些基本过程和在Android平台上的问题..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/&via=http://hwb0011.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/&via=http://hwb0011.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -350,12 +352,19 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/21/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AKotlin%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Kotlin征途（三）：Kotlin基本类型</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/07/07/Kotlin征途（二）：Kotlin基本语法/" id="post-next" class="post-nav-link">
+      <a href="/2019/07/07/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9AKotlin%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Kotlin征途（二）：Kotlin基本语法</h4>
       </a>
@@ -426,7 +435,8 @@
         </div>
         
         <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
             <div class="reward-toggle-ctrol">
                 <span class="reward-toggle-item wechat">微信</span>
                 <span class="reward-toggle-label"></span>
@@ -445,10 +455,10 @@
     <div class="top">
         
 <p>
-    <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_container_site_uv" style='display:none'>
         站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
 </p>
@@ -458,11 +468,11 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
-        <p><span>黄文镔 &copy; 2019</span>
+        <p><span>黄文镔 &copy; 2019 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -480,7 +490,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -490,23 +500,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&source=
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/&title=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&source=
 局域网通信已经很少被他人所提及了，我曾经还尝试过通过蓝牙构建通信网络，这次有机会尝试UDP局域网通信，在这里把一些基本过程和在Android平台上的问题..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/&via=http://hwb0011.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《UDP局域网通信的Java实现及Android平台尝试》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/&via=http://hwb0011.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/07/14/UDP局域网通信的Java实现及Android平台尝试/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/07/14/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -517,7 +527,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMklEQVR42u3aQZLiQAwEQP7/afY8wQIlyY7AcnJysKzd2T5oVOrHI/4840/1Pq/fv/v96/ev1wd/sLGxsS/CThjJdb6shPHum/z/fnkl2NjY2OvYk6V/vs6LVlLG8lfyxYiNjY19Y3ZSTnobkRSzeUHFxsbGvjM7weffV0tadYuxsbGx78bOF/Q5ju+1KPlTqus8IEvDxsbG/nl2PhX9/etT5tvY2NjYP8x+Fj/VwzT5U3qBVFOBjY2NvYh9xpGdaiORlMze/b/cExsbG3sFu1eokkFstRfo3S1fefSesbGxsS/I7h3HmSy9OjzobVlUJrGxsbGXsvNhat6W5FFUL5DqrRYbGxt7B7sazfdGwsmC8qdMhgSFU6XY2NjYl2L3isfZx32qUVGyEdjY2Nj3ZCfFphruzDH5eBgbGxv7DuykAOSP7A0Aqpvea3WwsbGx97HnBx97D042aLI1yZgZGxsbex+7V2zmQ99J/NR7LjY2NvYm9lGk3lC211rk44q3/4qNjY29jl09dnPegZs86K+ONP78HhsbG3sRuxfWT0KifDB8RsCEjY2NvY9dbQnmxSw6HJk3Fb2Nw8bGxl7Krv6hXz3WkzcqCXhUYrGxsbHXsZPyUC1OeSHs/X7SnGBjY2NvYh8V9OfFJh/cJnfOx8Zv3zk2Njb2CnYS/eQHdJKxbm+onMRP1UAKGxsb++rs6vGXPOLpHbXJ2flYFxsbG3s3Ow/iq6OCZCOqbUa5tUiaFmxsbOyLs6sFrLodveHusTEWNjY29m52HuUkheqoZqMaSOVtyaPKwMbGxr4Iu1q0Jody8uVWQ6U8usLGxsbex87D/Wp7UF1cteFJVhW9YWxsbOyl7NEANR76ThqM0cEjbGxs7BXsZ/FTXWLvNwmyWjK/TEWwsbGxL8vuFZ5JFJVfV48K9UIxbGxs7B3sPO7Ji1wyMD7qneRreOSTDWxsbOwLso/6cz8PeqoxU7P25kvBxsbGvg27WqImQVK1dSlEVNjY2Ng3Zvce3xstfL5PftjoP3fAxsbGXseehErz+L43bE62+O3WY2NjYy9iz8OganyfHwmqjgSqm4KNjY19cfY/W5qH88pwVqIAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFR0lEQVR42u3bwWrjQBAE0Pz/T2dh2UPAll3VPQoLfjoZ25FGbwzqqZ58fcXH99/j5+uf7zy+//idqzMk7ydjuPqrzRWPHfjw4cOHD19w2y1Z8s7sPMkZXp/n8fXm6vjw4cOHD9+ery1WkmFdfZpztCVRUqa0d/fGCh8+fPjw4buNr33Yb+KJFjSHyEHx4cOHDx++/5MvxyqGNUrI82ZDXuLgw4cPHz58d/C1Te5NrHCqif66KGmb67f3OvDhw4cPH76yUPic14cPfPjw4cOHL3g8t23pfBBnC5dNk37m8O9v8eHDhw8fvolGHVhvluhnG+r5SPZlSpG44MOHDx8+fBf3MtuC1rbS2yj/zWzHpcZmsqMJxocPHz58+Na93Vmx0kb8CVNL0MKdGic+fPjw4cPX8s1i+nzzWbuk31w9h0vGHE0APnz48OHDN6o3Nu3nO7aFJY3zttkwa+GvfoP48OHDhw/fRZ/3VLzeLtTbeZ6FAvkd5d/Bhw8fPnz4TvGt8v4bWuxtQbM/WxQr4MOHDx8+fCXfbFjtkcffeVg/K48229qK/QX48OHDhw9f8MxtH/Z5a7xFaQuItnmfjCdvFeDDhw8fPnw5X1ua5MVBHihslvdtg3/2aVGy4MOHDx8+fEEHOfmzTbmwifvb8eTn30wDPnz48OHDN+Nrb2MTx88a53kwsW8JtM0DfPjw4cOHb883i9TzwH0f3M8KnVlj4E1ggQ8fPnz48E2y7uG/WiWRdz2U+DsziLZ4ikaLDx8+fPjwxXx5BN/G+rNl/4Z1v/msbvzjw4cPHz58Jd/s5tule9uYb8OIvBjaFDpvfoP48OHDhw9f+fxtj1n4PgviZ9F8Utxs7hcfPnz48OFr+fLldLsRbX+GWZyxP2cR6OPDhw8fPnxrvrZR3Q5rVmrkwcRs29zwR4APHz58+PCt+dqyo21F5zTteDZt9Zb+WN2HDx8+fPg+kq+NsNsCJYfetw3yyKC93yffxIcPHz58+EZ8ySXvaJDP2vDttM2go0/x4cOHDx++Sep+YOfaLPKOluVBndCWRHmcERU6+PDhw4cPX8y32ViWDzovdNqzbUKNfBPAm5IFHz58+PDhi/naVne7zWuzmaxNxdvQYdYGeFP34cOHDx8+fGX50l5+szUtWdLnt5FMwGwrQFS44MOHDx8+fMH597F4fpNtK73tObQF0yzWx4cPHz58+E7xzVrXeZu8Ddw3y/jNroFiGxw+fPjw4cNX8p1a/J9qnLflyywyODX9+PDhw4cPX8vXRgBtW322IWwzDaeigegngg8fPnz48I34Nu3k/ZJ+Mz3tNO8b508SF3z48OHDh2+yaq4H8R0cm2b57LY343w9Wnz48OHDh+8UX06wp2zLgnZ67osMLq+IDx8+fPjwxXz5w7vdvJXwzVrX9dax0SRFDXh8+PDhw4ev5Gs3eCXvz8qFWZmSlC95ANFOIT58+PDhw9fytRvF8gf5/sx5eZHAnWoS4MOHDx8+fHu+JJ7eo8xihWR6kiBjv/Eu6nLgw4cPHz58JV/bMm8j79lt50VJXvrk1x3uL8CHDx8+fPjinm9SKNxXIuQN8rZtsCmGNuUOPnz48OHDN2tOb755qoDIg4w2rD+wyw8fPnz48OGL+WaBeMKRF0CbouoUYnL+J7kLPnz48OHDdwNf8s4sAmhb6Zttc7OC7PIq+PDhw4cP3y/yJSXIrOhJGuT7T/eNc3z48OHDh2/GdyqsT5oB+dDbNnYbwc/KqRt7Hfjw4cOH7wP49pvGNgv1tu88K5LasD6fPHz48OHDhy/m+wOZopqq9s087AAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
