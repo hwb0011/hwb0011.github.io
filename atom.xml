@@ -5,9 +5,9 @@
   <subtitle>完美运用所学的一切</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://hwb0011.github.io/"/>
+  <link href="https://coder-ice.gitee.io/"/>
   <updated>2020-02-21T03:09:40.084Z</updated>
-  <id>http://hwb0011.github.io/</id>
+  <id>https://coder-ice.gitee.io/</id>
   
   <author>
     <name>黄文镔</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Kotlin征途（八）：委托</title>
-    <link href="http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/"/>
-    <id>http://hwb0011.github.io/2019/12/15/Kotlin征途（八）：委托/</id>
+    <link href="https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/"/>
+    <id>https://coder-ice.gitee.io/2019/12/15/Kotlin征途（八）：委托/</id>
     <published>2019-12-15T07:55:08.000Z</published>
     <updated>2020-02-21T03:09:40.084Z</updated>
     
@@ -33,21 +33,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（七）：特殊的类</title>
-    <link href="http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/"/>
-    <id>http://hwb0011.github.io/2019/12/01/Kotlin征途（七）：特殊的类/</id>
+    <link href="https://coder-ice.gitee.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/"/>
+    <id>https://coder-ice.gitee.io/2019/12/01/Kotlin征途（七）：特殊的类/</id>
     <published>2019-12-01T12:29:47.000Z</published>
     <updated>2020-02-21T03:06:54.216Z</updated>
     
@@ -61,21 +61,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（六）：继承、接口、扩展</title>
-    <link href="http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/"/>
-    <id>http://hwb0011.github.io/2019/11/15/Kotlin征途（六）：继承、接口、扩展/</id>
+    <link href="https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/"/>
+    <id>https://coder-ice.gitee.io/2019/11/15/Kotlin征途（六）：继承、接口、扩展/</id>
     <published>2019-11-15T09:32:19.000Z</published>
     <updated>2020-02-21T03:06:45.457Z</updated>
     
@@ -89,21 +89,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（五）：Kotlin类和对象</title>
-    <link href="http://hwb0011.github.io/2019/11/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9AKotlin%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://hwb0011.github.io/2019/11/01/Kotlin征途（五）：Kotlin类和对象/</id>
+    <link href="https://coder-ice.gitee.io/2019/11/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9AKotlin%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://coder-ice.gitee.io/2019/11/01/Kotlin征途（五）：Kotlin类和对象/</id>
     <published>2019-11-01T06:06:20.000Z</published>
     <updated>2020-02-21T03:07:14.344Z</updated>
     
@@ -117,21 +117,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（四）：Kotlin控制语句</title>
-    <link href="http://hwb0011.github.io/2019/10/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9AKotlin%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/"/>
-    <id>http://hwb0011.github.io/2019/10/15/Kotlin征途（四）：Kotlin控制语句/</id>
+    <link href="https://coder-ice.gitee.io/2019/10/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9AKotlin%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/"/>
+    <id>https://coder-ice.gitee.io/2019/10/15/Kotlin征途（四）：Kotlin控制语句/</id>
     <published>2019-10-15T03:39:15.000Z</published>
     <updated>2020-02-21T03:07:06.771Z</updated>
     
@@ -145,21 +145,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>开发书籍阅读总结（一）：HeadFirst设计模式</title>
-    <link href="http://hwb0011.github.io/2019/10/01/%E5%BC%80%E5%8F%91%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AHeadFirst%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://hwb0011.github.io/2019/10/01/开发书籍阅读总结（一）：HeadFirst设计模式/</id>
+    <link href="https://coder-ice.gitee.io/2019/10/01/%E5%BC%80%E5%8F%91%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AHeadFirst%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://coder-ice.gitee.io/2019/10/01/开发书籍阅读总结（一）：HeadFirst设计模式/</id>
     <published>2019-10-01T10:53:53.000Z</published>
     <updated>2020-02-21T03:06:16.521Z</updated>
     
@@ -173,21 +173,21 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="http://hwb0011.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://coder-ice.gitee.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Java" scheme="http://hwb0011.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://coder-ice.gitee.io/tags/Java/"/>
     
-      <category term="设计模式" scheme="http://hwb0011.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://coder-ice.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（三）：Kotlin基本类型</title>
-    <link href="http://hwb0011.github.io/2019/09/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AKotlin%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://hwb0011.github.io/2019/09/15/Kotlin征途（三）：Kotlin基本类型/</id>
+    <link href="https://coder-ice.gitee.io/2019/09/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AKotlin%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://coder-ice.gitee.io/2019/09/15/Kotlin征途（三）：Kotlin基本类型/</id>
     <published>2019-09-15T07:41:08.000Z</published>
     <updated>2020-02-21T03:07:00.930Z</updated>
     
@@ -201,21 +201,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>UDP局域网通信的Java实现及Android平台尝试</title>
-    <link href="http://hwb0011.github.io/2019/09/01/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/"/>
-    <id>http://hwb0011.github.io/2019/09/01/UDP局域网通信的Java实现及Android平台尝试/</id>
+    <link href="https://coder-ice.gitee.io/2019/09/01/UDP%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%9A%E4%BF%A1%E7%9A%84Java%E5%AE%9E%E7%8E%B0%E5%8F%8AAndroid%E5%B9%B3%E5%8F%B0%E5%B0%9D%E8%AF%95/"/>
+    <id>https://coder-ice.gitee.io/2019/09/01/UDP局域网通信的Java实现及Android平台尝试/</id>
     <published>2019-09-01T07:17:19.000Z</published>
     <updated>2020-02-21T03:07:29.808Z</updated>
     
@@ -229,21 +229,21 @@
     
     </summary>
     
-      <category term="工作之余" scheme="http://hwb0011.github.io/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/"/>
+      <category term="工作之余" scheme="https://coder-ice.gitee.io/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Java" scheme="http://hwb0011.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://coder-ice.gitee.io/tags/Java/"/>
     
-      <category term="UDP" scheme="http://hwb0011.github.io/tags/UDP/"/>
+      <category term="UDP" scheme="https://coder-ice.gitee.io/tags/UDP/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（二）：Kotlin基本语法</title>
-    <link href="http://hwb0011.github.io/2019/08/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9AKotlin%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
-    <id>http://hwb0011.github.io/2019/08/15/Kotlin征途（二）：Kotlin基本语法/</id>
+    <link href="https://coder-ice.gitee.io/2019/08/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9AKotlin%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    <id>https://coder-ice.gitee.io/2019/08/15/Kotlin征途（二）：Kotlin基本语法/</id>
     <published>2019-08-15T06:20:28.000Z</published>
     <updated>2020-02-21T03:06:38.094Z</updated>
     
@@ -257,21 +257,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>APP启动黑屏白屏原因与解决方式</title>
-    <link href="http://hwb0011.github.io/2019/08/01/APP%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E7%99%BD%E5%B1%8F%E5%8E%9F%E5%9B%A0%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/"/>
-    <id>http://hwb0011.github.io/2019/08/01/APP启动黑屏白屏原因与解决方式/</id>
+    <link href="https://coder-ice.gitee.io/2019/08/01/APP%E5%90%AF%E5%8A%A8%E9%BB%91%E5%B1%8F%E7%99%BD%E5%B1%8F%E5%8E%9F%E5%9B%A0%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/"/>
+    <id>https://coder-ice.gitee.io/2019/08/01/APP启动黑屏白屏原因与解决方式/</id>
     <published>2019-08-01T06:55:52.000Z</published>
     <updated>2020-02-21T03:06:01.289Z</updated>
     
@@ -285,19 +285,19 @@
     
     </summary>
     
-      <category term="避坑指南" scheme="http://hwb0011.github.io/categories/%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/"/>
+      <category term="避坑指南" scheme="https://coder-ice.gitee.io/categories/%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="优化" scheme="http://hwb0011.github.io/tags/%E4%BC%98%E5%8C%96/"/>
+      <category term="优化" scheme="https://coder-ice.gitee.io/tags/%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>25类Android常用开源框架</title>
-    <link href="http://hwb0011.github.io/2019/07/15/25%E7%B1%BBAndroid%E5%B8%B8%E7%94%A8%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/"/>
-    <id>http://hwb0011.github.io/2019/07/15/25类Android常用开源框架/</id>
+    <link href="https://coder-ice.gitee.io/2019/07/15/25%E7%B1%BBAndroid%E5%B8%B8%E7%94%A8%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/"/>
+    <id>https://coder-ice.gitee.io/2019/07/15/25类Android常用开源框架/</id>
     <published>2019-07-15T03:41:22.000Z</published>
     <updated>2020-02-21T03:01:23.609Z</updated>
     
@@ -311,21 +311,21 @@
     
     </summary>
     
-      <category term="开发资源" scheme="http://hwb0011.github.io/categories/%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90/"/>
+      <category term="开发资源" scheme="https://coder-ice.gitee.io/categories/%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="框架" scheme="http://hwb0011.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="https://coder-ice.gitee.io/tags/%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="资源" scheme="http://hwb0011.github.io/tags/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://coder-ice.gitee.io/tags/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   
   <entry>
     <title>Kotlin征途（一）：简单APP的制作</title>
-    <link href="http://hwb0011.github.io/2019/07/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E7%AE%80%E5%8D%95APP%E7%9A%84%E5%88%B6%E4%BD%9C/"/>
-    <id>http://hwb0011.github.io/2019/07/01/Kotlin征途（一）：简单APP的制作/</id>
+    <link href="https://coder-ice.gitee.io/2019/07/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E7%AE%80%E5%8D%95APP%E7%9A%84%E5%88%B6%E4%BD%9C/"/>
+    <id>https://coder-ice.gitee.io/2019/07/01/Kotlin征途（一）：简单APP的制作/</id>
     <published>2019-07-01T08:11:45.000Z</published>
     <updated>2020-02-21T03:01:07.392Z</updated>
     
@@ -339,21 +339,21 @@
     
     </summary>
     
-      <category term="Kotlin征途" scheme="http://hwb0011.github.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
+      <category term="Kotlin征途" scheme="https://coder-ice.gitee.io/categories/Kotlin%E5%BE%81%E9%80%94/"/>
     
     
-      <category term="Android" scheme="http://hwb0011.github.io/tags/Android/"/>
+      <category term="Android" scheme="https://coder-ice.gitee.io/tags/Android/"/>
     
-      <category term="Kotlin" scheme="http://hwb0011.github.io/tags/Kotlin/"/>
+      <category term="Kotlin" scheme="https://coder-ice.gitee.io/tags/Kotlin/"/>
     
-      <category term="编程" scheme="http://hwb0011.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="https://coder-ice.gitee.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>MarkDown使用教程(In Atom)</title>
-    <link href="http://hwb0011.github.io/2019/06/15/MarkDown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B(In%20Atom)/"/>
-    <id>http://hwb0011.github.io/2019/06/15/MarkDown使用教程(In Atom)/</id>
+    <link href="https://coder-ice.gitee.io/2019/06/15/MarkDown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B(In%20Atom)/"/>
+    <id>https://coder-ice.gitee.io/2019/06/15/MarkDown使用教程(In Atom)/</id>
     <published>2019-06-15T08:11:45.000Z</published>
     <updated>2020-02-21T03:00:45.723Z</updated>
     
@@ -367,19 +367,19 @@
     
     </summary>
     
-      <category term="工作之余" scheme="http://hwb0011.github.io/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/"/>
+      <category term="工作之余" scheme="https://coder-ice.gitee.io/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/"/>
     
     
-      <category term="MarkDown" scheme="http://hwb0011.github.io/tags/MarkDown/"/>
+      <category term="MarkDown" scheme="https://coder-ice.gitee.io/tags/MarkDown/"/>
     
-      <category term="博客" scheme="http://hwb0011.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://coder-ice.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>利用GitHub和Hexo打造免费的个人博客</title>
-    <link href="http://hwb0011.github.io/2019/06/01/%E5%88%A9%E7%94%A8GitHub%E5%92%8CHexo%E6%89%93%E9%80%A0%E5%85%8D%E8%B4%B9%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://hwb0011.github.io/2019/06/01/利用GitHub和Hexo打造免费的个人博客/</id>
+    <link href="https://coder-ice.gitee.io/2019/06/01/%E5%88%A9%E7%94%A8GitHub%E5%92%8CHexo%E6%89%93%E9%80%A0%E5%85%8D%E8%B4%B9%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://coder-ice.gitee.io/2019/06/01/利用GitHub和Hexo打造免费的个人博客/</id>
     <published>2019-06-01T03:30:30.000Z</published>
     <updated>2019-06-12T08:12:52.061Z</updated>
     
@@ -393,14 +393,14 @@
     
     </summary>
     
-      <category term="工作之余" scheme="http://hwb0011.github.io/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/"/>
+      <category term="工作之余" scheme="https://coder-ice.gitee.io/categories/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E4%BD%99/"/>
     
     
-      <category term="博客" scheme="http://hwb0011.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://coder-ice.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="前端" scheme="http://hwb0011.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://coder-ice.gitee.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="hexo" scheme="http://hwb0011.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://coder-ice.gitee.io/tags/hexo/"/>
     
   </entry>
   

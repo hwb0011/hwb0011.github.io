@@ -26,7 +26,7 @@
     <meta name="description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin征途（八）：委托">
-<meta property="og:url" content="http:&#x2F;&#x2F;hwb0011.github.io&#x2F;2019&#x2F;12&#x2F;15&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;coder-ice.gitee.io&#x2F;2019&#x2F;12&#x2F;15&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98&#x2F;index.html">
 <meta property="og:site_name" content="黄文镔的博客">
 <meta property="og:description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
 <meta property="article:published_time" content="2019-12-15T07:55:08.000Z">
@@ -129,7 +129,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -316,7 +316,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-21T03:09:40.084Z" itemprop="dateUpdated">2020-02-21 11:09:40</time>
+    最後更新時間：<time datetime="2020-02-21T03:09:40.084Z" itemprop="dateUpdated">2020-02-21 11:09:40</time>
 </span><br>
 
 
@@ -326,7 +326,7 @@
     </div>
     
     <footer>
-        <a href="http://hwb0011.github.io">
+        <a href="https://coder-ice.gitee.io">
             <img src="/img/avatar.jpg" alt="黄文镔">
             黄文镔
         </a>
@@ -352,7 +352,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&pic=https://coder-ice.gitee.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -362,23 +362,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&source=
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&source=
 本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（八）：委托》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&via=http://hwb0011.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（八）：委托》 — 黄文镔的博客&url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&via=https://coder-ice.gitee.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -507,7 +507,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>本部落格係採用<a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -529,7 +529,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&pic=https://coder-ice.gitee.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -539,23 +539,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&source=
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&title=《Kotlin征途（八）：委托》 — 黄文镔的博客&source=
 本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（八）：委托》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&via=http://hwb0011.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（八）：委托》 — 黄文镔的博客&url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/&via=https://coder-ice.gitee.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coder-ice.gitee.io/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -566,7 +566,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD60lEQVR42u3aS24bQQwFQN//0snWQDLyeyRlJ0DNShhJ091lAxQ/Hx/x9evT9fnO02eSd5Przyc83Ul2eHbhwIEDB474qE8ber3Y62/lKyZP3uw2QceBAwcOHFccT5tOQlry3SR85qvkiPkZceDAgQPHT3Ek77bPT2jesUMcOHDgwPHvcLwOh3mgzYPo64LjZv84cODAgeMdHLOCXZ5QvZspLxee1Upx4MCBA0e67kcetP6X12+Z78CBAwcOHPFgQR6QNsvno3WztlZ9Ohw4cODAsebIj5EPpV2R5VibQIsDBw4cOL6Hoy3hJZvL21SzptdmrXrOAgcOHDhwPHDMErY22ds0tHKyaFjhdZMMBw4cOHAcceTHnvVrNr2etiW2GYnAgQMHDhx7jij8xEBtaypP25L0bBbso3QOBw4cOHAccSRbzDc9G02YNZ/aAiIOHDhw4LjiyMNVHiD3CdtmPGI1KocDBw4cONYcs/CWLH81rDBL5zbNKhw4cODAseeYhdJNAe52eCL/WVD8yXHgwIEDx5ojLxcm7yYJYX6nDcYzdBw4cODAsefYJF2zYNw2tDYhNh+qw4EDBw4ctxx5+pSPzbUjbvvSYQ70eAcHDhw4cBxx5OMI7cjC/jltetaOVuDAgQMHjluOto3UhrqkITQL5FflxUgLBw4cOHAsGkub1zPuJFXLy5F58TFqO+HAgQMHjpJjtpU8uWoDatvWmq37xZ8KBw4cOHAsOFY5X5xK7ct2Cfpm5zhw4MCB45ajDbH78bW2ILgP529M3nDgwIEDx0PvPglaOc2szHd1yJb4L/8jOHDgwIFjwdGmXrPgmswM5PGuTeEOhhtw4MCBA0fA0YbJNvHLcdugvtl/USvFgQMHDhwlRz5Y1jaT2mQvSbHykB/NcSQlQhw4cODAUXK0AwHt4W+fMEv/8s/jwIEDB449R5KetQebjT7kQTcvOA4TSBw4cODAseCoe1MlYtugymla4iio48CBAweOI46kOLgpILbhOS9KFqNvSZkSBw4cOHAcceQhcN9Gmj2zDaXtkBwOHDhw4LjlyItus2bPrO3UfndWHMSBAwcOHLcc+ZeTVKpN/GZtpKvQiwMHDhw43sGxWWZ2+KT8t2kgtYF/NYWBAwcOHDgW12zrbZOpJZulhckPCBw4cODAseHI20htSW4WaNui4XGgxYEDBw4cRxybVlB+yLZ4lyeW7W+Hx8/jwIEDB45v59gPLrSNrtvPfwGHAwcOHDi+nWN2yKS8uAnqM6DH+Q4cOHDgwLHmyDedbChP3mb9sRnfcdsJBw4cOHCsBxpmd9pkLDnw7BjtSAQOHDhw4Cg5fgPDPSCCy01gKgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD2klEQVR42u3aSVLDQBAEQP//0/AAsFzVPXLokDoRYM+SOjS9vF7x8/Pnuf7Mu28lT7vj9e6vOx4cOHDgwFFe9fpw1+skv7m+ak6WvIb8jjhw4MCB4yxHEsbaqNQePUFPXkYedHHgwIEDx3M4ZkG0XSH5ZHJCHDhw4MDxZI59KjWrziXlSBw4cODA8RyOpDh4TdOGw/bCeej9Uq0UBw4cOHDMK2+vnOaZP98y34EDBw4cOEZNo7aF0xbsNuvPipVvb4cDBw4cONYc+4JdPqA2C+15SpbDffgkDhw4cOA4ytGW1domU36xOwqCSbMNBw4cOHBsODajBvthiH1aWLzzpIyIAwcOHDgOceTpUJ6e5dCzNCznLpJMHDhw4MCx5mgb/21SdDagbhK/4nXiwIEDB44FR5JQteW5zXBD2+LKQ3UUznHgwIEDx5qjbT7N0qRTnZ02wLfDEzhw4MCBY8+RB9c2JJ8aaMgTyPa0OHDgwIHjDo7ZofcBNU/ANqwJOg4cOHDgOMvRLpH/NR9c2A+95Q2tD6EXBw4cOHAcymJmRbc8QdoPySWNqIQgWgcHDhw4cCw48gu3jahvtpE2/wTgwIEDB46zHLMn3yb/fbtLm0CeHYDAgQMHDhzXfZbZqEHeLmrDcxuAc7JilAEHDhw4cCw4ro/bjhfkyVK7fvLz7C7/DDTgwIEDB475t4pRgLwJlAfOPKxugIrxCBw4cODAsebYFweTNGxTFpyF9tk4BQ4cOHDguI9jttmszDfrle1DPg4cOHDguJtjNljWNqLadDG/TAJUpHA4cODAgWNdHDwwFhD/NSE4Fc7zthYOHDhw4LiD4+z4WouVAyXNsIQABw4cOHCc5Wi3SZKl/KCbouTsDG2ZEgcOHDhw5Bz5ctchMA9a+2LfLPRGQR0HDhw4cKw5ZiW8JB3aBOa8/Ne2mor/O3DgwIEDx4hjFiDz1GtTXmzXzJO3tzviwIEDB46vcCRB9BRcHjLbAbuo7IgDBw4cOA5xtEMAm+3bFc5+68NJcODAgQPHIY58XODU2FwejPMa56xk+TaFw4EDBw4cI45TZbtTqV3yMk5BfxhlwIEDBw4co5V/ymc2QDAr7bVXzRO/wgkHDhw4cJQcs7DXDhPMkrS2wJevXzSicODAgQPHiKO92IZmWLArX1UbaHHgwIEDxx0cZ+N2fu1N2ykP6nWJEAcOHDhwfJEjP9As9coRZwneBzgcOHDgwPEYjuSI+cpn07zk9eDAgQMHjrMcdwwxzAqOeYjNW1YJNw4cOHDgOMWxKdW1RcB89CG/8CxgbwqLOHDgwIHjze6/gTfFB1TfW9oAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

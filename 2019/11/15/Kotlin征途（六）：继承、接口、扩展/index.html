@@ -26,7 +26,7 @@
     <meta name="description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin征途（六）：继承、接口、扩展">
-<meta property="og:url" content="http:&#x2F;&#x2F;hwb0011.github.io&#x2F;2019&#x2F;11&#x2F;15&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;coder-ice.gitee.io&#x2F;2019&#x2F;11&#x2F;15&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95&#x2F;index.html">
 <meta property="og:site_name" content="黄文镔的博客">
 <meta property="og:description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
 <meta property="article:published_time" content="2019-11-15T09:32:19.000Z">
@@ -129,7 +129,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -328,7 +328,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-21T03:06:45.457Z" itemprop="dateUpdated">2020-02-21 11:06:45</time>
+    最後更新時間：<time datetime="2020-02-21T03:06:45.457Z" itemprop="dateUpdated">2020-02-21 11:06:45</time>
 </span><br>
 
 
@@ -338,7 +338,7 @@
     </div>
     
     <footer>
-        <a href="http://hwb0011.github.io">
+        <a href="https://coder-ice.gitee.io">
             <img src="/img/avatar.jpg" alt="黄文镔">
             黄文镔
         </a>
@@ -364,7 +364,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&pic=https://coder-ice.gitee.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -374,23 +374,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&source=
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&source=
 本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&via=http://hwb0011.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&via=https://coder-ice.gitee.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -526,7 +526,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>本部落格係採用<a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -548,7 +548,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&pic=https://coder-ice.gitee.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -558,23 +558,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&source=
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&source=
 本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&via=http://hwb0011.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&via=https://coder-ice.gitee.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -585,7 +585,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFN0lEQVR42u3aUW4bOxAEQN3/0s5vgERy9/T64QEpfRmSvEsWBeywh69X/Pp68/r90z+/+e6dd9dM3v88nuQ7yRgefuHDhw8fPnwBTYLy53U+k737/udP21G9u3KCmJvgw4cPHz58C18ygQSuHdBSlCwFUPvjePs+Pnz48OHD98N8yaf7d9qtfn795GeBDx8+fPjw/X/42iA+D+iTVDz/dAnr8eHDhw8fvp/my7fo7XDb4D7f6rfLf4sVHut14MOHDx8+fOUprH/n7x8534cPHz58+P55vq/ylRwCayOGfBufFyVtJPF1euHDhw8fPnwnjSIovzXL29b1XjO0TfHJAR8+fPjw4bs4FIfDbqy3QqdturcNgzym/4YYHz58+PDhC/jyr7at4ratvgcBt1BgWTB8+PDhw4ev5Wsf3rfH/FNwebh/C+tvhwPw4cOHDx++ne+pcLwN7vO2+h7WP0WPDx8+fPjwtXztsPZmdts4b1sCS2RfhAX48OHDhw9fybfE8cl/tcVEUqYszYMlrP/L3/jw4cOHD9/AdwvN8ykl90oWZmkb5Mfjoivjw4cPHz58Jd/+aE/SiPbTfCR70L80LfDhw4cPH74bXz69NnZP3l/a1U+1wJd54cOHDx8+fPn4239oH/m3mP6p6+SthSRceBvW48OHDx8+fDHf/vjPF2BZqr3o2Zf5m7oPHz58+PDhC0beouQP/rbJnR8Ou23128Z5FNbjw4cPHz58A98Smt8mf/t+29pffhZ1lwMfPnz48OG7P6MLlGSbnW/jl0g9WaRbM34qevDhw4cPH764Tb5syNutflsetYftbk2Ct2PGhw8fPnz4HuW73XgvXG5jWKKHx8J6fPjw4cOHL+BLvnrLG/Y2eV6+fL5aslR5ZI8PHz58+PDd+JKSIt9atyFCe982XFja8/mRO3z48OHDh6/la4GWCGA/LnZriufLc4w28OHDhw8fvnhebYSdD2sqBeYxtEC3FgU+fPjw4cOX8yVTWo6C5Rv79u5tqdFGA1OXHh8+fPjw4Ssf/1G9U0bzT2ElBcpSxBQ/Gnz48OHDh+9RvqQFfjsi1pZKexDf/iyi++LDhw8fPnyn3nE7jfaQ2a0N3y5Yu3i3YuiVDxEfPnz48OE7De4WnT8b1u9Hym6H1b5BxIcPHz58+E58yeTbR/sCl2/v26IkKbzyd/Dhw4cPH74bX3vjtiDII4O8bdAG68kyTzE9Pnz48OHDF/PdJnwrPvawYFnIp8L6t3UfPnz48OHDd+JLgvK8gFiuudNMQJ/vgg8fPnz48JV8t9vcttltM3tpA9wKr+My4MOHDx8+fJcneLGNz4uYNqZvI/VjqXG6chSL4MOHDx8+fDFfO4Hb5n8pcdrG+S2sz8ssfPjw4cOHr+VLipJ8m91G6u3xuFt80JZfxezw4cOHDx++y+xebdmR0P/EgbP2CF1C/1hYjw8fPnz48AV87e3bEiQpUBamW3nURhJvTfDhw4cPH74TX36D243zJvSrfC0oSwMeHz58+PDhe4ovb1rnQ2lLh7ZsSu6+3PeblAUfPnz48OGL+doSId/8Jxv4PIy4TePWfshDB3z48OHDh+/Gt7So21i8LS9arARlKVz+8ik+fPjw4cN34kumlHMvhcJeSOVF1bL3x4cPHz58+P4bvhY6R2zD/bYkan8KkQA+fPjw4cP3w3xtqP1sQN8u6lN3xIcPHz58+J7lS6Z6C773O95a7znErZ2ADx8+fPjwPZQARKFA2xRPQG+xwlNL1c4dHz58+PDhK+f+C8Qn+NjFEFe1AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFLElEQVR42u3cwW7jOBAE0Pz/T2eAvU4kV3WTs4c8nQzLlsinAG5WE/n6io/v/46nd76D4+maf3/m/f3ZFdp7HT7w4cOHDx++10G8D30/jeRsPr0cLhl/fh18+PDhw4dvw9cO6/0XPH/n/ZNJCdUWW/k4o7vjw4cPHz581/ja15tF+yx0SKKNdo748OHDhw/f/8W3ieDPtg3a9kAbSeDDhw8fPny3+c6WF/sCIg/oz7YTLvY68OHDhw8fvtEGtd/w+uL+Pnz48OHD94v5vsujLTWSAZ1qZs+2oK008OHDhw8fvpHGO02+UM+Hu1l+55F6e5f8Ua1Q8OHDhw/fL+abTTIpKRKm/eRnrfFW4PFq+PDhw4cPX8m3aTPn9PuG95Wl/voB48OHDx8+fBu+Ni6fRer7MD3vXOdF1WyE+PDhw4cP34xvv2BuW9R5cbP5bn6d9kHiw4cPHz58M7586HlJ0ZY7tzeWJXFG24bHhw8fPnz4ZnyzJf0GPS8gZtHAvQccRQb48OHDhw/f63zzCGATJbQFRDuNvG1wuDmBDx8+fPjwLfjyyHsWiOdxfD6NPL6fxRYfXuPDhw8fPnwlX1KsbJbip4DyQmo2l7pkyWs9fPjw4cOH7yFtjoxLsv12seHfwnrzWRRM4MOHDx8+fBf4khIhD/1vTO9Ui71uuuPDhw8fPnwX+Da3nMUQ+ea5ttCZlVarlAUfPnz48OGLN2btS4ezbemzbe92Q97jLgN8+PDhw4evqzGKpXsbl98rYtqQYtbgj+6ODx8+fPjwxXffL63PNqfbZf/skznZBwd8+PDhw4dvxNdiJRzJBGbT2JPN5vvDaPHhw4cPH76S79TCvuXLW+zJ0M9Szh4nPnz48OHDl/DtG8yz1njCkbDOQv9ZM+CH0eLDhw8fPnwX+PIW8iw4yAuIljX/VjLfH87iw4cPHz58Jd8mLp8VE/tG9b5VcGqm+PDhw4cP34avXUi34X4bHMweUh525J/58Mjx4cOHDx++kq9tfs+ihLb5/T7VWUjRBv3Fw8aHDx8+fPgCvtnkE+4b35rB7UufqK+ODx8+fPjwxXz5JeoWcsB0Iz7YjCcvffDhw4cPH76Wb7bZa7PwTqL/TdO9DSzyMuXxXvjw4cOHD1/JNysd8mi7jSHaEmcW9LdnI258+PDhw4cv4EsC9Jx4FrW3KG30384rp8SHDx8+fPhyvnygs7ImL3fa2KJtnydhQfKH8tjrwIcPHz58+BZ87bI5WeS3R062oZw1AKJdA/jw4cOHD1/QEU5unG/z2mwRaxvhs61ms614+PDhw4cP34ZvthGt7QnkLfBZIzwfYRuOfLgOPnz48OHDN6ki6n/U1baoZwVEG+63LfD8akXLHB8+fPjw4Xu4ft6EXv2orxsAe+5NZPA4U3z48OHDh2/yS52l+COOtsTJC4hNBJCPoZgvPnz48OHDF8x39oOdDL1OLNaN8OQh7QuyH+o+fPjw4cOHr+TLG9ibgqMtd/IGdnJ2c198+PDhw4fvHt+pRvJsU9qp0mQT8edzwYcPHz58+Fq+fTTflhGzuOFrdJxq5LePHx8+fPjw4Xvny4uVWRM6L5LuFRCbNvyH2eHDhw8fPnwjvjyk3jCdKlDORhuzAg4fPnz48OG7zbcBmhHPovwbZx9HiA8fPnz48P1zvryImYUObRs+n1c78sewHh8+fPjw4Sv5NgH6rEWdTz5/SG00kBdPB3od+PDhw4cP3yKkblvp7Sp7ViTly/7ZgQ8fPnz48C34/gBZkxLphHjWkwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
