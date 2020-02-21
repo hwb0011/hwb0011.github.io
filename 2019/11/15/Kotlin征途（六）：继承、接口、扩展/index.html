@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://coder-ice.gitee.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/">
+    
+    
+    <title>Kotlin征途（六）：继承、接口、扩展 | 黄文镔的博客 | 完美运用所学的一切</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#212121">
+    
+    
+    <meta name="keywords" content="Android,Kotlin,编程">
+    <meta name="description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin征途（六）：继承、接口、扩展">
+<meta property="og:url" content="http:&#x2F;&#x2F;hwb0011.github.io&#x2F;2019&#x2F;11&#x2F;15&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95&#x2F;index.html">
+<meta property="og:site_name" content="黄文镔的博客">
+<meta property="og:description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
+<meta property="article:published_time" content="2019-11-15T09:32:19.000Z">
+<meta property="article:modified_time" content="2020-02-21T03:06:45.457Z">
+<meta property="article:author" content="黄文镔">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Kotlin">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="黄文镔的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.1.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄文镔</h5>
+          <a href="mailto:2509246913@qq.com" title="2509246913@qq.com" class="mail">2509246913@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hwb0011" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/hwb0011" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Kotlin征途（六）：继承、接口、扩展</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Kotlin征途（六）：继承、接口、扩展</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-15T09:32:19.000Z" itemprop="datePublished" class="page-time">
+  2019-11-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Kotlin%E5%BE%81%E9%80%94/">Kotlin征途</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-继承"><span class="post-toc-text">1. 继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-覆盖方法"><span class="post-toc-text">1.1 覆盖方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-覆盖属性"><span class="post-toc-text">1.2 覆盖属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-派生类初始化顺序"><span class="post-toc-text">1.3 派生类初始化顺序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-4-调用超类实现"><span class="post-toc-text">1.4 调用超类实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-5-覆盖规则"><span class="post-toc-text">1.5 覆盖规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-6-抽象类"><span class="post-toc-text">1.6 抽象类</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-接口"><span class="post-toc-text">2. 接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-实现接口"><span class="post-toc-text">2.1 实现接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-接口中的属性"><span class="post-toc-text">2.2 接口中的属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3-接口继承"><span class="post-toc-text">2.3 接口继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-4-解决覆盖冲突"><span class="post-toc-text">2.4 解决覆盖冲突</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-扩展"><span class="post-toc-text">3. 扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-扩展函数"><span class="post-toc-text">3.1 扩展函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-扩展是静态解析的"><span class="post-toc-text">3.2 扩展是静态解析的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-可空接收者"><span class="post-toc-text">3.3 可空接收者</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-4-扩展属性"><span class="post-toc-text">3.4 扩展属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-5-伴生对象的扩展"><span class="post-toc-text">3.5 伴生对象的扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-6-扩展的作用域"><span class="post-toc-text">3.6 扩展的作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-7-扩展声明为成员"><span class="post-toc-text">3.7 扩展声明为成员</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Kotlin征途（六）：继承、接口、扩展"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Kotlin征途（六）：继承、接口、扩展</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-15 17:32:19" datetime="2019-11-15T09:32:19.000Z"  itemprop="datePublished">2019-11-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Kotlin%E5%BE%81%E9%80%94/">Kotlin征途</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。  </p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-继承"><a href="#1-继承" class="headerlink" title="1. 继承"></a>1. 继承</h1><p>在 Kotlin 中所有类都有一个共同的超类<code>Any</code>，这对于没有超类型声明的类是默认超类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> // 从 <span class="title">Any</span> 隐式继承</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Any</code>有三个方法：<code>equals()</code>、 <code>hashCode()</code> 与 <code>toString()</code>。因此，为所有 Kotlin 类都定义了这些方法。</p>
+<p>如需声明一个显式的超类型，需要使用<code>open</code>关键字修饰超类型，派生类头中把超类型放到冒号之后：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">open class <span class="title">Base</span><span class="params">(p: Int)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">class <span class="title">Derived</span><span class="params">(p: Int)</span> : <span class="title">Base</span><span class="params">(p)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>如果派生类有一个主构造函数，其基类必须用派生类主构造函数的参数就地初始化。如果派生类没有主构造函数，那么每个次构造函数必须使用<code>super</code>关键字初始化其基类型，或委托给另一个构造函数做到这一点。 注意，在这种情况下，不同的次构造函数可以调用基类型的不同的构造函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class MyView : View &#123;</span><br><span class="line"></span><br><span class="line">    constructor(ctx: Context) : <span class="keyword">super</span>(ctx)</span><br><span class="line"></span><br><span class="line">    constructor(ctx: Context, attrs: AttributeSet) : <span class="keyword">super</span>(ctx, attrs)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-1-覆盖方法"><a href="#1-1-覆盖方法" class="headerlink" title="1.1 覆盖方法"></a>1.1 覆盖方法</h2><p>Kotlin 对于可覆盖的成员（我们称之为开放）以及覆盖后的成员需要显式修饰符：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">open fun <span class="title">draw</span><span class="params">()</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">fill</span><span class="params">()</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle() : Shape() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Shape.draw()函数有open修饰，可以覆盖</span></span><br><span class="line">    <span class="function">override fun <span class="title">draw</span><span class="params">()</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Circle.draw()</code>函数上必须加上<code>override</code>修饰符。如果没写，编译器将会报错。 如果函数没有标注<code>open</code>如<code>Shape.fill()</code>，那么子类中不允许定义相同签名的函数， 不论加不加<code>override</code>。将<code>open</code>修饰符添加到<code>final</code>类（即没有 <code>open</code>的类）的成员上不起作用。</p>
+<p>标记为<code>override</code>的成员本身是开放的，也就是说，它可以在子类中覆盖。如果你想禁止再次覆盖，使用<code>final</code>关键字：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">open class <span class="title">Rectangle</span><span class="params">()</span> : <span class="title">Shape</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Rectangle.draw()函数将无法被Rectangle的派生类覆盖</span></span><br><span class="line">    <span class="function"><span class="keyword">final</span> override fun <span class="title">draw</span><span class="params">()</span> </span>&#123; <span class="comment">/*……*/</span> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-覆盖属性"><a href="#1-2-覆盖属性" class="headerlink" title="1.2 覆盖属性"></a>1.2 覆盖属性</h2><p>属性覆盖与方法覆盖类似；在超类中声明并用<code>open</code>修饰，然后在派生类中重新声明的属性必须以<code>override</code>开头，并且它们必须具有兼容的类型。 每个声明的属性可以由具有初始化器的属性或者具有<code>get</code>方法的属性覆盖。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    open val vertexCount: Int = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Rectangle : Shape() &#123;</span><br><span class="line"></span><br><span class="line">    override val vertexCount = <span class="number">4</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你也可以用一个<code>var</code>属性覆盖一个<code>val</code>属性，但<strong>反之则不行</strong>。 这是允许的，因为一个<code>val</code>属性本质上声明了一个<code>get</code>方法， 而将其覆盖为<code>var</code>只是在子类中额外声明一个<code>set</code>方法。</p>
+<p>请注意，你可以在主构造函数中使用<code>override</code>关键字作为属性声明的一部分。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    val vertexCount: Int</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Polygon : Shape &#123;</span><br><span class="line"></span><br><span class="line">    override <span class="keyword">var</span> vertexCount: Int = <span class="number">0</span>  <span class="comment">// 以后可以设置为任何数</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Rectangle(override val vertexCount: Int = 4) : Shape // 总是有 4 个顶点</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-派生类初始化顺序"><a href="#1-3-派生类初始化顺序" class="headerlink" title="1.3 派生类初始化顺序"></a>1.3 派生类初始化顺序</h2><p>在构造派生类的新实例的过程中，第一步完成其基类的初始化（在之前只有对基类构造函数参数的求值），因此发生在派生类的初始化逻辑运行之前。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">open class <span class="title">Base</span><span class="params">(val name: String)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    init &#123; println(<span class="string">"Initializing Base"</span>) &#125;</span><br><span class="line"></span><br><span class="line">    open val size: Int = name.length.also &#123; println(<span class="string">"Initializing size in Base: $it"</span>) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Derived(name: String,val lastName: String) :</span><br><span class="line">    Base(name.capitalize().also &#123;</span><br><span class="line">        println(<span class="string">"Argument for Base: $it"</span>)</span><br><span class="line">    &#125;) &#123;</span><br><span class="line"></span><br><span class="line">        init &#123; println(<span class="string">"Initializing Derived"</span>) &#125;</span><br><span class="line"></span><br><span class="line">        override val size: Int =(<span class="keyword">super</span>.size + lastName.length).also &#123;</span><br><span class="line">            println(<span class="string">"Initializing size in Derived: $it"</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行代码<code>Constructing Derived(&quot;hello&quot;, &quot;world&quot;)</code>，输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Argument for Base: Hello</span><br><span class="line">Initializing Base</span><br><span class="line">Initializing size in Base: 5</span><br><span class="line">Initializing Derived</span><br><span class="line">Initializing size in Derived: 10</span><br></pre></td></tr></table></figure>
+
+<p>这意味着，基类构造函数执行时，派生类中声明或覆盖的属性都还没有初始化。如果在基类初始化逻辑中（直接或通过另一个覆盖的<code>open</code>成员的实现间接）使用了任何一个这种属性，那么都可能导致不正确的行为或运行时故障。设计一个基类时，应该避免在构造函数、属性初始化器以及<code>init</code>块中使用<code>open</code>成员。</p>
+<h2 id="1-4-调用超类实现"><a href="#1-4-调用超类实现" class="headerlink" title="1.4 调用超类实现"></a>1.4 调用超类实现</h2><p>派生类中的代码可以使用<code>super</code>关键字调用其超类的函数与属性访问器的实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">open fun <span class="title">draw</span><span class="params">()</span> </span>&#123; println(<span class="string">"Drawing a rectangle"</span>) &#125;</span><br><span class="line"></span><br><span class="line">    val borderColor: <span class="function">String <span class="title">get</span><span class="params">()</span> </span>= <span class="string">"black"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class FilledRectangle : Rectangle() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.draw()</span><br><span class="line">        println(<span class="string">"Filling the rectangle"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    val fillColor: <span class="function">String <span class="title">get</span><span class="params">()</span> </span>= <span class="keyword">super</span>.borderColor</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在一个内部类中访问外部类的超类，可以通过由外部类名限定的<code>super</code>关键字来实现<code>：super@Outer</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class FilledRectangle: Rectangle() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">draw</span><span class="params">()</span> </span>&#123; <span class="comment">/* …… */</span> &#125;</span><br><span class="line"></span><br><span class="line">    val borderColor: <span class="function">String <span class="title">get</span><span class="params">()</span> </span>= <span class="string">"black"</span></span><br><span class="line"></span><br><span class="line">    inner <span class="class"><span class="keyword">class</span> <span class="title">Filler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="function">fun <span class="title">fill</span><span class="params">()</span> </span>&#123; <span class="comment">/* …… */</span> &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function">fun <span class="title">drawAndFill</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span><span class="meta">@FilledRectangle</span>.draw() <span class="comment">// 调用 Rectangle 的 draw() 实现</span></span><br><span class="line">            fill()</span><br><span class="line">            println(<span class="string">"Drawn a filled rectangle with color $&#123;super@FilledRectangle.borderColor&#125;"</span>) <span class="comment">// 使用 Rectangle 所实现的 borderColor 的 get()</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-5-覆盖规则"><a href="#1-5-覆盖规则" class="headerlink" title="1.5 覆盖规则"></a>1.5 覆盖规则</h2><p>在 Kotlin 中，实现继承由下述规则规定：如果一个类从它的直接超类继承相同成员的多个实现， 它必须覆盖这个成员并提供其自己的实现（也许用继承来的其中之一）。 为了表示采用从哪个超类型继承的实现，我们使用由尖括号中超类型名限定的<code>super</code>，如<code>super&lt;Base&gt;</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">open fun <span class="title">draw</span><span class="params">()</span> </span>&#123; <span class="comment">/* …… */</span> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">draw</span><span class="params">()</span> </span>&#123; <span class="comment">/* …… */</span> &#125; <span class="comment">// 接口成员默认就是“open”的</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Square() : Rectangle(), Polygon &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 编译器要求覆盖 draw()：</span></span><br><span class="line">    <span class="function">override fun <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>&lt;Rectangle&gt;.draw() <span class="comment">// 调用 Rectangle.draw()</span></span><br><span class="line">        <span class="keyword">super</span>&lt;Polygon&gt;.draw() <span class="comment">// 调用 Polygon.draw()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以同时继承<code>Rectangle</code>与<code>Polygon</code>， 但是二者都有各自的<code>draw()</code>实现，所以我们必须在<code>Square</code>中覆盖<code>draw()</code>， 并提供其自身的实现以消除歧义。</p>
+<h2 id="1-6-抽象类"><a href="#1-6-抽象类" class="headerlink" title="1.6 抽象类"></a>1.6 抽象类</h2><p>类以及其中的某些成员可以声明为<code>abstract</code>。 抽象成员在本类中可以不用实现。 需要注意的是，我们并不需要用<code>open</code>标注一个抽象类或者函数——因为这不言而喻。</p>
+<p>我们可以用一个抽象成员覆盖一个非抽象的开放成员。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">open fun <span class="title">draw</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">abstract class Rectangle : Polygon() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">override <span class="keyword">abstract</span> fun <span class="title">draw</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-接口"><a href="#2-接口" class="headerlink" title="2. 接口"></a>2. 接口</h1><p>Kotlin 的接口可以既包含抽象方法的声明也包含实现。与抽象类不同的是，接口无法保存状态。它可以有属性但必须声明为抽象或提供访问器实现。</p>
+<p>使用关键字<code>interface</code>来定义接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">bar</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    fun <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// 可选的方法体</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-1-实现接口"><a href="#2-1-实现接口" class="headerlink" title="2.1 实现接口"></a>2.1 实现接口</h2><p>一个类或者对象可以实现一个或多个接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Child : MyInterface &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>接口的实现方式与继承相似，并且Kotlin的接口可以有属性和实现的方法，可以达到类似于多继承的效果。</p>
+</blockquote>
+<h2 id="2-2-接口中的属性"><a href="#2-2-接口中的属性" class="headerlink" title="2.2 接口中的属性"></a>2.2 接口中的属性</h2><p>你可以在接口中定义属性。在接口中声明的属性要么是抽象的，要么提供访问器的实现。在接口中声明的属性不能有幕后字段（<code>backing field</code>），因此接口中声明的访问器不能引用它们。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    val prop: Int <span class="comment">// 抽象的</span></span><br><span class="line"></span><br><span class="line">    val propertyWithImplementation: String</span><br><span class="line">        get() = <span class="string">"foo"</span></span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        print(prop)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child : MyInterface &#123;</span><br><span class="line"></span><br><span class="line">    override val prop: Int = <span class="number">29</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-接口继承"><a href="#2-3-接口继承" class="headerlink" title="2.3 接口继承"></a>2.3 接口继承</h2><p>一个接口可以从其他接口派生，从而既提供基类型成员的实现也声明新的函数与属性。很自然地，实现这样接口的类只需定义所缺少的实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Named</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    val name: String</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Person : Named &#123;</span><br><span class="line"></span><br><span class="line">    val firstName: String</span><br><span class="line">    val lastName: String</span><br><span class="line">    override val name: <span class="function">String <span class="title">get</span><span class="params">()</span> </span>= <span class="string">"$firstName $lastName"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">data class <span class="title">Employee</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    // 不必实现“name”</span></span></span><br><span class="line"><span class="function"><span class="params">    override val firstName: String,</span></span></span><br><span class="line"><span class="function"><span class="params">    override val lastName: String,</span></span></span><br><span class="line"><span class="function"><span class="params">    val position: Position</span></span></span><br><span class="line"><span class="function"><span class="params">)</span> : Person</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-解决覆盖冲突"><a href="#2-4-解决覆盖冲突" class="headerlink" title="2.4 解决覆盖冲突"></a>2.4 解决覆盖冲突</h2><p>实现多个接口时，可能会遇到同一方法继承多个实现的问题。例如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">foo</span><span class="params">()</span> </span>&#123; print(<span class="string">"A"</span>) &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">bar</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">interface B </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">foo</span><span class="params">()</span> </span>&#123; print(<span class="string">"B"</span>) &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">bar</span><span class="params">()</span> </span>&#123; print(<span class="string">"bar"</span>) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class C : A &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">bar</span><span class="params">()</span> </span>&#123; print(<span class="string">"bar"</span>) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class D : A, B &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>&lt;A&gt;.foo()</span><br><span class="line">        <span class="keyword">super</span>&lt;B&gt;.foo()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>&lt;B&gt;.bar()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上例中，接口 A 和 B 都定义了方法<code>foo()</code>和<code>bar()</code>。 两者都实现了<code>foo()</code>, 但是只有 B 实现了<code>bar()</code>(<code>bar()</code> 在 A 中没有标记为抽象， 因为没有方法体时默认为抽象）。因为 C 是一个实现了 A 的具体类，所以必须要重写<code>bar()</code>并实现这个抽象方法。</p>
+<p>然而，如果我们从 A 和 B 派生 D，我们需要实现我们从多个接口继承的所有方法，并指明 D 应该如何实现它们。这一规则既适用于继承单个实现（<code>bar()</code>）的方法也适用于继承多个实现（<code>foo()</code>）的方法。</p>
+<h1 id="3-扩展"><a href="#3-扩展" class="headerlink" title="3. 扩展"></a>3. 扩展</h1><p>Kotlin 能够扩展一个类的新功能而无需继承该类或者使用像装饰者这样的设计模式。 这通过叫做<code>扩展</code>的特殊声明完成。 例如，你可以为一个你不能修改的、来自第三方库中的类编写一个新的函数。 这个新增的函数就像那个原始类本来就有的函数一样，可以用普通的方法调用。 这种机制称为<code>扩展函数</code>。此外，也有<code>扩展属性</code>， 允许你为一个已经存在的类添加新的属性。</p>
+<h2 id="3-1-扩展函数"><a href="#3-1-扩展函数" class="headerlink" title="3.1 扩展函数"></a>3.1 扩展函数</h2><p>声明一个扩展函数，我们需要用一个<code>接收者类型</code>也就是被扩展的类型来作为他的前缀。 下面代码为<code>MutableList&lt;Int&gt;</code>添加一个<code>swap</code>函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fun MutableList&lt;Int&gt;.swap(index1: Int, index2: Int) &#123;</span><br><span class="line">    val tmp = <span class="keyword">this</span>[index1] <span class="comment">// “this”对应该列表</span></span><br><span class="line">    <span class="keyword">this</span>[index1] = <span class="keyword">this</span>[index2]</span><br><span class="line">    <span class="keyword">this</span>[index2] = tmp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个<code>this</code>关键字在扩展函数内部对应到接收者对象（传过来的在点符号前的对象） 现在，我们对任意<code>MutableList&lt;Int&gt;</code>调用该函数了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val list = mutableListOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">list.swap(<span class="number">0</span>, <span class="number">2</span>) <span class="comment">// “swap()”内部的“this”会保存“list”的值</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，这个函数对任何 MutableList<T> 起作用，我们可以泛化它：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fun &lt;T&gt; MutableList&lt;T&gt;.swap(index1: Int, index2: Int) &#123;</span><br><span class="line">    val tmp = <span class="keyword">this</span>[index1] <span class="comment">// “this”对应该列表</span></span><br><span class="line">    <span class="keyword">this</span>[index1] = <span class="keyword">this</span>[index2]</span><br><span class="line">    <span class="keyword">this</span>[index2] = tmp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了在接收者类型表达式中使用泛型，我们要在函数名前声明泛型参数。</p>
+<h2 id="3-2-扩展是静态解析的"><a href="#3-2-扩展是静态解析的" class="headerlink" title="3.2 扩展是静态解析的"></a>3.2 扩展是静态解析的</h2><p>扩展不能真正的修改他们所扩展的类。通过定义一个扩展，你并没有在一个类中插入新成员， 仅仅是可以通过该类型的变量用点表达式去调用这个新函数。</p>
+<p>我们想强调的是扩展函数是静态分发的，即他们不是根据接收者类型的虚方法。 这意味着调用的扩展函数是由函数调用所在的表达式的类型来决定的， 而不是由表达式运行时求值结果决定的。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Shape</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line">class Rectangle: Shape() &#123;&#125;</span><br><span class="line"></span><br><span class="line">fun Shape.getName() = <span class="string">"Shape"</span></span><br><span class="line"></span><br><span class="line">fun Rectangle.getName() = <span class="string">"Rectangle"</span></span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">printClassName</span><span class="params">(s: Shape)</span> </span>&#123;</span><br><span class="line">    println(s.getName())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printClassName(Rectangle())</span><br></pre></td></tr></table></figure>
+
+<p>这个例子会输出 “Shape”，因为调用的扩展函数只取决于参数<code>s</code>的声明类型，该类型是<code>Shape</code>类。</p>
+<p>如果一个类定义有一个成员函数与一个扩展函数，而这两个函数又有相同的接收者类型、 相同的名字，并且都适用给定的参数，这种情况总是取成员函数。 例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">printFunctionType</span><span class="params">()</span> </span>&#123; println(<span class="string">"Class method"</span>) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun Example.printFunctionType() &#123; println(<span class="string">"Extension function"</span>) &#125;</span><br><span class="line"></span><br><span class="line">Example().printFunctionType()</span><br></pre></td></tr></table></figure>
+
+<p>这段代码输出“Class method”。</p>
+<p>当然，扩展函数重载同样名字但不同签名成员函数也完全可以：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">printFunctionType</span><span class="params">()</span> </span>&#123; println(<span class="string">"Class method"</span>) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun Example.printFunctionType(i: Int) &#123; println(<span class="string">"Extension function"</span>) &#125;</span><br><span class="line"></span><br><span class="line">Example().printFunctionType(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这段代码输出“Extension function”。</p>
+<h2 id="3-3-可空接收者"><a href="#3-3-可空接收者" class="headerlink" title="3.3 可空接收者"></a>3.3 可空接收者</h2><p>注意可以为可空的接收者类型定义扩展。这样的扩展可以在对象变量上调用， 即使其值为<code>null</code>，并且可以在函数体内检测<code>this == null</code>，这能让你在没有检测<code>null</code>的时候调用 Kotlin 中的<code>toString()</code>：检测发生在扩展函数的内部。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun Any?.toString(): String &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="string">"null"</span></span><br><span class="line">    <span class="comment">// 空检测之后，“this”会自动转换为非空类型，所以下面的 toString()</span></span><br><span class="line">    <span class="comment">// 解析为 Any 类的成员函数</span></span><br><span class="line">    <span class="keyword">return</span> toString()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-4-扩展属性"><a href="#3-4-扩展属性" class="headerlink" title="3.4 扩展属性"></a>3.4 扩展属性</h2><p>与函数类似，Kotlin 支持扩展属性：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val &lt;T&gt; List&lt;T&gt;.lastIndex: Int</span><br><span class="line">    get() = size - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：由于扩展没有实际的将成员插入类中，因此对扩展属性来说幕后字段是无效的。这就是为什么扩展属性不能有初始化器。他们的行为只能由显式提供的<code>getters/setters</code>定义。例如:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val House.number = <span class="number">1</span> <span class="comment">// 错误：扩展属性不能有初始化器</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-伴生对象的扩展"><a href="#3-5-伴生对象的扩展" class="headerlink" title="3.5 伴生对象的扩展"></a>3.5 伴生对象的扩展</h2><p>如果一个类定义有一个伴生对象 ，你也可以为伴生对象定义扩展函数与属性。就像伴生对象的常规成员一样， 可以只使用类名作为限定符来调用伴生对象的扩展成员：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    companion object &#123; &#125;  <span class="comment">// 将被称为 "Companion"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun MyClass.Companion.printCompanion() &#123; println(<span class="string">"companion"</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">()</span> </span>&#123; MyClass.printCompanion() &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-6-扩展的作用域"><a href="#3-6-扩展的作用域" class="headerlink" title="3.6 扩展的作用域"></a>3.6 扩展的作用域</h2><p>大多数时候我们在顶层定义扩展——直接在包里：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.declarations</span><br><span class="line"></span><br><span class="line">fun List&lt;String&gt;.getLongestString() &#123; <span class="comment">/*……*/</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要使用所定义包之外的一个扩展，我们需要在调用方导入它：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.usage</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.example.declarations.getLongestString</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    val list = listOf(<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>)</span><br><span class="line">    list.getLongestString()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-7-扩展声明为成员"><a href="#3-7-扩展声明为成员" class="headerlink" title="3.7 扩展声明为成员"></a>3.7 扩展声明为成员</h2><p>在一个类内部你可以为另一个类声明扩展。在这样的扩展内部，有多个<code>隐式接收者</code>—— 其中的对象成员可以无需通过限定符访问。扩展声明所在的类的实例称为<code>分发接收者</code>，扩展方法调用所在的接收者类型的实例称为<code>扩展接收者</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Host(val hostname: String) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">printHostname</span><span class="params">()</span> </span>&#123; print(hostname) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Connection(val host: Host, val port: Int) &#123;</span><br><span class="line"></span><br><span class="line">     <span class="function">fun <span class="title">printPort</span><span class="params">()</span> </span>&#123; print(port) &#125;</span><br><span class="line"></span><br><span class="line">     fun Host.printConnectionString() &#123;</span><br><span class="line">         printHostname()   <span class="comment">// 调用 Host.printHostname()</span></span><br><span class="line">         print(<span class="string">":"</span>)</span><br><span class="line">         printPort()   <span class="comment">// 调用 Connection.printPort()</span></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function">fun <span class="title">connect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="comment">/*……*/</span></span><br><span class="line">         host.printConnectionString()   <span class="comment">// 调用扩展函数</span></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Connection(Host(<span class="string">"kotl.in"</span>), <span class="number">443</span>).connect()</span><br><span class="line">    <span class="comment">//Host("kotl.in").printConnectionString(443)  // 错误，该扩展函数在 Connection 外不可用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于分发接收者与扩展接收者的成员名字冲突的情况，扩展接收者优先。要引用分发接收者的成员你可以使用限定的<code>this</code>语法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Connection</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    fun Host.getConnectionString() &#123;</span><br><span class="line">        toString()         <span class="comment">// 调用 Host.toString()</span></span><br><span class="line">        <span class="keyword">this</span><span class="meta">@Connection</span>.toString()  <span class="comment">// 调用 Connection.toString()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>声明为成员的扩展可以声明为<code>open</code>并在子类中覆盖。这意味着这些函数的分发对于分发接收者类型是虚拟的，但对于扩展接收者类型是静态的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">Base</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">class Derived : Base() &#123; &#125;</span><br><span class="line"></span><br><span class="line">open <span class="class"><span class="keyword">class</span> <span class="title">BaseCaller</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    open fun Base.printFunctionInfo() &#123;</span><br><span class="line">        println(<span class="string">"Base extension function in BaseCaller"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    open fun Derived.printFunctionInfo() &#123;</span><br><span class="line">        println(<span class="string">"Derived extension function in BaseCaller"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">call</span><span class="params">(b: Base)</span> </span>&#123;</span><br><span class="line">        b.printFunctionInfo()   <span class="comment">// 调用扩展函数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class DerivedCaller: BaseCaller() &#123;</span><br><span class="line"></span><br><span class="line">    override fun Base.printFunctionInfo() &#123;</span><br><span class="line">        println(<span class="string">"Base extension function in DerivedCaller"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    override fun Derived.printFunctionInfo() &#123;</span><br><span class="line">        println(<span class="string">"Derived extension function in DerivedCaller"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    BaseCaller().call(Base())</span><br><span class="line">    DerivedCaller().call(Base())</span><br><span class="line">    DerivedCaller().call(Derived())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Base extension function in BaseCaller</span><br><span class="line">Base extension function in DerivedCaller</span><br><span class="line">Base extension function in DerivedCaller</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-02-21T03:06:45.457Z" itemprop="dateUpdated">2020-02-21 11:06:45</time>
+</span><br>
+
+
+        
+        记录历程，回首过去，抓住点滴，迎接未来。进步就在于一行行没有被遗忘的代码，成功就在于一页页没有被踩死的文章。感谢您的支持，我是程序猿，我为梦想带盐！
+        
+    </div>
+    
+    <footer>
+        <a href="http://hwb0011.github.io">
+            <img src="/img/avatar.jpg" alt="黄文镔">
+            黄文镔
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/" rel="tag">Kotlin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&source=
+本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Kotlin征途（七）：特殊的类</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9AKotlin%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Kotlin征途（五）：Kotlin类和对象</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '50c13be55e1505e5d611',
+          clientSecret: 'c81100c6fe66b456bbb56de82cb5b8cb835503d4',
+          repo: 'hwb0011.github.io',
+          owner: 'hwb0011',
+          admin: ['hwb0011'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄文镔 &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&title=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&source=
+本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（六）：继承、接口、扩展》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFN0lEQVR42u3aUW4bOxAEQN3/0s5vgERy9/T64QEpfRmSvEsWBeywh69X/Pp68/r90z+/+e6dd9dM3v88nuQ7yRgefuHDhw8fPnwBTYLy53U+k737/udP21G9u3KCmJvgw4cPHz58C18ygQSuHdBSlCwFUPvjePs+Pnz48OHD98N8yaf7d9qtfn795GeBDx8+fPjw/X/42iA+D+iTVDz/dAnr8eHDhw8fvp/my7fo7XDb4D7f6rfLf4sVHut14MOHDx8+fOUprH/n7x8534cPHz58+P55vq/ylRwCayOGfBufFyVtJPF1euHDhw8fPnwnjSIovzXL29b1XjO0TfHJAR8+fPjw4bs4FIfDbqy3QqdturcNgzym/4YYHz58+PDhC/jyr7at4ratvgcBt1BgWTB8+PDhw4ev5Wsf3rfH/FNwebh/C+tvhwPw4cOHDx++ne+pcLwN7vO2+h7WP0WPDx8+fPjwtXztsPZmdts4b1sCS2RfhAX48OHDhw9fybfE8cl/tcVEUqYszYMlrP/L3/jw4cOHD9/AdwvN8ykl90oWZmkb5Mfjoivjw4cPHz58Jd/+aE/SiPbTfCR70L80LfDhw4cPH74bXz69NnZP3l/a1U+1wJd54cOHDx8+fPn4239oH/m3mP6p6+SthSRceBvW48OHDx8+fDHf/vjPF2BZqr3o2Zf5m7oPHz58+PDhC0beouQP/rbJnR8Ou23128Z5FNbjw4cPHz58A98Smt8mf/t+29pffhZ1lwMfPnz48OG7P6MLlGSbnW/jl0g9WaRbM34qevDhw4cPH764Tb5syNutflsetYftbk2Ct2PGhw8fPnz4HuW73XgvXG5jWKKHx8J6fPjw4cOHL+BLvnrLG/Y2eV6+fL5aslR5ZI8PHz58+PDd+JKSIt9atyFCe982XFja8/mRO3z48OHDh6/la4GWCGA/LnZriufLc4w28OHDhw8fvnhebYSdD2sqBeYxtEC3FgU+fPjw4cOX8yVTWo6C5Rv79u5tqdFGA1OXHh8+fPjw4Ssf/1G9U0bzT2ElBcpSxBQ/Gnz48OHDh+9RvqQFfjsi1pZKexDf/iyi++LDhw8fPnyn3nE7jfaQ2a0N3y5Yu3i3YuiVDxEfPnz48OE7De4WnT8b1u9Hym6H1b5BxIcPHz58+E58yeTbR/sCl2/v26IkKbzyd/Dhw4cPH74bX3vjtiDII4O8bdAG68kyTzE9Pnz48OHDF/PdJnwrPvawYFnIp8L6t3UfPnz48OHDd+JLgvK8gFiuudNMQJ/vgg8fPnz48JV8t9vcttltM3tpA9wKr+My4MOHDx8+fJcneLGNz4uYNqZvI/VjqXG6chSL4MOHDx8+fDFfO4Hb5n8pcdrG+S2sz8ssfPjw4cOHr+VLipJ8m91G6u3xuFt80JZfxezw4cOHDx++y+xebdmR0P/EgbP2CF1C/1hYjw8fPnz48AV87e3bEiQpUBamW3nURhJvTfDhw4cPH74TX36D243zJvSrfC0oSwMeHz58+PDhe4ovb1rnQ2lLh7ZsSu6+3PeblAUfPnz48OGL+doSId/8Jxv4PIy4TePWfshDB3z48OHDh+/Gt7So21i8LS9arARlKVz+8ik+fPjw4cN34kumlHMvhcJeSOVF1bL3x4cPHz58+P4bvhY6R2zD/bYkan8KkQA+fPjw4cP3w3xtqP1sQN8u6lN3xIcPHz58+J7lS6Z6C773O95a7znErZ2ADx8+fPjwPZQARKFA2xRPQG+xwlNL1c4dHz58+PDhK+f+C8Qn+NjFEFe1AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

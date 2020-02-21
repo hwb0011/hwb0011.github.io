@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="https://coder-ice.gitee.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/">
+    
+    
+    <title>Kotlin征途（七）：特殊的类 | 黄文镔的博客 | 完美运用所学的一切</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#212121">
+    
+    
+    <meta name="keywords" content="Android,Kotlin,编程">
+    <meta name="description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin征途（七）：特殊的类">
+<meta property="og:url" content="http:&#x2F;&#x2F;hwb0011.github.io&#x2F;2019&#x2F;12&#x2F;01&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB&#x2F;index.html">
+<meta property="og:site_name" content="黄文镔的博客">
+<meta property="og:description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
+<meta property="article:published_time" content="2019-12-01T12:29:47.000Z">
+<meta property="article:modified_time" content="2020-02-21T03:06:54.216Z">
+<meta property="article:author" content="黄文镔">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Kotlin">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="黄文镔的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.1.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄文镔</h5>
+          <a href="mailto:2509246913@qq.com" title="2509246913@qq.com" class="mail">2509246913@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hwb0011" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/hwb0011" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Kotlin征途（七）：特殊的类</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Kotlin征途（七）：特殊的类</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-01T12:29:47.000Z" itemprop="datePublished" class="page-time">
+  2019-12-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Kotlin%E5%BE%81%E9%80%94/">Kotlin征途</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-数据类"><span class="post-toc-text">1. 数据类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-数据类的定义"><span class="post-toc-text">1.1 数据类的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-在类体中声明的属性"><span class="post-toc-text">1.2 在类体中声明的属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-复制"><span class="post-toc-text">1.3 复制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-4-数据类与解构声明"><span class="post-toc-text">1.4 数据类与解构声明</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-密封类"><span class="post-toc-text">2. 密封类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-泛型"><span class="post-toc-text">3. 泛型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-声明处型变"><span class="post-toc-text">3.1  声明处型变</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-使用处型变"><span class="post-toc-text">3.2 使用处型变</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-1-类型投影"><span class="post-toc-text">3.2.1 类型投影</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-2-星投影"><span class="post-toc-text">3.2.2 星投影</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-泛型函数"><span class="post-toc-text">3.3 泛型函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-枚举类"><span class="post-toc-text">4. 枚举类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-1-初始化"><span class="post-toc-text">4.1 初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-2-匿名类"><span class="post-toc-text">4.2 匿名类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-3-在枚举类中实现接口"><span class="post-toc-text">4.3 在枚举类中实现接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-4-使用枚举常量"><span class="post-toc-text">4.4 使用枚举常量</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-内联类"><span class="post-toc-text">5. 内联类</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Kotlin征途（七）：特殊的类"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Kotlin征途（七）：特殊的类</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-01 20:29:47" datetime="2019-12-01T12:29:47.000Z"  itemprop="datePublished">2019-12-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Kotlin%E5%BE%81%E9%80%94/">Kotlin征途</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。  </p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-数据类"><a href="#1-数据类" class="headerlink" title="1. 数据类"></a>1. 数据类</h1><h2 id="1-1-数据类的定义"><a href="#1-1-数据类的定义" class="headerlink" title="1.1 数据类的定义"></a>1.1 数据类的定义</h2><p>我们经常创建一些只保存数据的类。 在这些类中，一些标准函数往往是从数据机械推导而来的。在 Kotlin 中，这叫做<code>数据类</code>并标记为<code>data</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">data class <span class="title">User</span><span class="params">(val name: String, val age: Int)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>编译器自动从主构造函数中声明的所有属性导出以下成员：</p>
+<ul>
+<li><code>equals()</code>/<code>hashCode()</code> 对；</li>
+<li><code>toString()</code> 格式是 <code>User(name=John, age=42)</code>；</li>
+<li><code>componentN()</code> 函数 按声明顺序对应于所有属性；</li>
+<li><code>copy()</code> 函数（见下文）。</li>
+</ul>
+<p>为了确保生成的代码的一致性以及有意义的行为，数据类必须满足以下要求：</p>
+<ul>
+<li>主构造函数需要至少有一个参数；</li>
+<li>主构造函数的所有参数需要标记为 <code>val</code> 或 <code>var</code>；</li>
+<li>数据类不能是抽象、开放、密封或者内部的；</li>
+<li>（在1.1之前）数据类只能实现接口。</li>
+</ul>
+<p>此外，成员生成遵循关于成员继承的这些规则：</p>
+<ul>
+<li>如果在数据类体中有显式实现<code>equals()</code>、 <code>hashCode()</code> 或者<code>toString()</code>，或者这些函数在父类中有 <code>final</code> 实现，那么不会生成这些函数，而会使用现有函数；</li>
+<li>如果超类型具有 <code>open</code> 的 <code>componentN()</code> 函数并且返回兼容的类型， 那么会为数据类生成相应的函数，并覆盖超类的实现。如果超类型的这些函数由于签名不兼容或者是 <code>final</code> 而导致无法覆盖，那么会报错；</li>
+<li>从一个已具 <code>copy(……)</code> 函数且签名匹配的类型派生一个数据类在 <code>Kotlin 1.2</code> 中已弃用，并且在 <code>Kotlin 1.3</code> 中已禁用。</li>
+<li>不允许为 <code>componentN()</code> 以及 <code>copy()</code> 函数提供显式实现。</li>
+</ul>
+<blockquote>
+<p>自 1.1 起，数据类可以扩展其他类。</p>
+</blockquote>
+<p>在 <code>JVM</code> 中，如果生成的类需要含有一个无参的构造函数，则所有的属性必须指定默认值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">data class <span class="title">User</span><span class="params">(val name: String = <span class="string">""</span>, val age: Int = <span class="number">0</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-在类体中声明的属性"><a href="#1-2-在类体中声明的属性" class="headerlink" title="1.2 在类体中声明的属性"></a>1.2 在类体中声明的属性</h2><p>请注意，对于那些自动生成的函数，编译器只使用在主构造函数内部定义的属性。如需在生成的实现中排除一个属性，请将其声明在类体中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">data class <span class="title">Person</span><span class="params">(val name: String)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> age: Int = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>toString()</code>、<code>equals()</code>、 <code>hashCode()</code> 以及 <code>copy()</code> 的实现中只会用到 <code>name</code> 属性，并且只有一个 <code>component</code> 函数 <code>component1()</code>。虽然两个<code>Person</code> 对象可以有不同的年龄，但它们会视为相等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val person1 = Person(<span class="string">"John"</span>)</span><br><span class="line">val person2 = Person(<span class="string">"John"</span>)</span><br><span class="line">person1.age = <span class="number">10</span></span><br><span class="line">person2.age = <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-复制"><a href="#1-3-复制" class="headerlink" title="1.3 复制"></a>1.3 复制</h2><p>在很多情况下，我们需要复制一个对象改变它的一些属性，但其余部分保持不变。<code>copy()</code> 函数就是为此而生成。对于上文的<code>User</code>类，其实现会类似下面这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fun <span class="title">copy</span><span class="params">(name: String = <span class="keyword">this</span>.name, age: Int = <span class="keyword">this</span>.age)</span> </span>= User(name, age)</span><br></pre></td></tr></table></figure>
+
+<p>这让我们可以写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val jack = User(name = <span class="string">"Jack"</span>, age = <span class="number">1</span>)</span><br><span class="line">val olderJack = jack.copy(age = <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-数据类与解构声明"><a href="#1-4-数据类与解构声明" class="headerlink" title="1.4 数据类与解构声明"></a>1.4 数据类与解构声明</h2><p>为数据类生成的<code>Component</code>函数 使它们可在解构声明中使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val jane = User(<span class="string">"Jane"</span>, <span class="number">35</span>)</span><br><span class="line">val (name, age) = jane</span><br><span class="line">println(<span class="string">"$name, $age years of age"</span>) <span class="comment">// 输出 "Jane, 35 years of age"</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-密封类"><a href="#2-密封类" class="headerlink" title="2. 密封类"></a>2. 密封类</h1><p>密封类用来表示受限的类继承结构：当一个值为有限几种的类型、而不能有任何其他类型时。在某种意义上，他们是枚举类的扩展：枚举类型的值集合也是受限的，但每个枚举常量只存在一个实例，而密封类的一个子类可以有可包含状态的多个实例。</p>
+<p>要声明一个密封类，需要在类名前面添加<code>sealed</code>修饰符。虽然密封类也可以有子类，但是所有子类都必须在与密封类自身相同的文件中声明。（在 <code>Kotlin 1.1</code> 之前， 该规则更加严格：子类必须嵌套在密封类声明的内部）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sealed <span class="class"><span class="keyword">class</span> <span class="title">Expr</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line">data class Const(val number: Double) : Expr()</span><br><span class="line"></span><br><span class="line"><span class="function">data class <span class="title">Sum</span><span class="params">(val e1: Expr, val e2: Expr)</span> : <span class="title">Expr</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">object NotANumber : <span class="title">Expr</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<p>（上文示例使用了 <code>Kotlin 1.1</code> 的一个额外的新功能：数据类扩展包括密封类在内的其他类的可能性。 ）</p>
+<p>一个密封类是自身抽象的，它不能直接实例化并可以有抽象（<code>abstract</code>）成员。</p>
+<p>密封类不允许有非<code>private</code>构造函数（其构造函数默认为<code>private</code>）。</p>
+<p>请注意，扩展密封类子类的类（<code>间接继承者</code>）可以放在任何位置，而无需在同一个文件中。</p>
+<p>使用密封类的关键好处在于使用<code>when</code>表达式 的时候，如果能够验证语句覆盖了所有情况，就不需要为该语句再添加一个<code>else</code>子句了。当然，这只有当你用<code>when</code>作为表达式（使用结果）而不是作为语句时才有用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fun <span class="title">eval</span><span class="params">(expr: Expr)</span>: Double </span>= when(expr) &#123;</span><br><span class="line">    is Const -&gt; expr.number</span><br><span class="line">    is Sum -&gt; eval(expr.e1) + eval(expr.e2)</span><br><span class="line">    NotANumber -&gt; Double.NaN</span><br><span class="line">    <span class="comment">// 不再需要 `else` 子句，因为我们已经覆盖了所有的情况</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-泛型"><a href="#3-泛型" class="headerlink" title="3. 泛型"></a>3. 泛型</h2><p>与 Java 类似，Kotlin 中的类也可以有类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Box&lt;T&gt;(t: T) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> value = t</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一般来说，要创建这样类的实例，我们需要提供类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val box: Box&lt;Int&gt; = Box&lt;Int&gt;(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>但是如果类型参数可以推断出来，例如从构造函数的参数或者从其他途径，允许省略类型参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val box = Box(<span class="number">1</span>) <span class="comment">// 1 具有类型 Int，所以编译器知道我们说的是 Box&lt;Int&gt;。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-1-声明处型变"><a href="#3-1-声明处型变" class="headerlink" title="3.1  声明处型变"></a>3.1  声明处型变</h2><p>我们可以标注 <code>Source</code> 的类型参数 <code>T</code> 来确保它仅从<code>Source&lt;T&gt;</code>成员中返回（生产），并从不被消费。 为此，我们提供<code>out</code>修饰符：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Source</span>&lt;<span class="title">out</span> <span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">nextT</span><span class="params">()</span>: T</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">fun <span class="title">demo</span><span class="params">(strs: Source&lt;String&gt;)</span> </span>&#123;</span><br><span class="line">    val objects: Source&lt;Any&gt; = strs <span class="comment">// 这个没问题，因为 T 是一个 out-参数，String是Any的子类型</span></span><br><span class="line">    val outNextT = objects.nextT()  <span class="comment">// 此时的调用相当于将String类型强转为Any类型，成功运行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一般原则是：当一个类<code>C</code>的类型参数 <code>T</code>被声明为 <code>out</code>时，它就只能出现在<code>C</code> 的成员的输出位置，但回报是 <code>C&lt;Base&gt;</code> 可以安全地作为 <code>C&lt;Derived&gt;</code>的超类。</p>
+<p>简而言之，他们说类 <code>C</code> 是在参数 <code>T</code> 上是协变的，或者说 <code>T</code> 是一个协变的类型参数。 你可以认为 <code>C</code> 是 <code>T</code> 的生产者，而不是 <code>T</code> 的消费者。</p>
+<p><code>out</code>修饰符称为型变注解，并且由于它在类型参数声明处提供，所以我们称之为声明处型变。</p>
+<p>另外除了 <code>out</code>，Kotlin 又补充了一个型变注释：<code>in</code>。它使得一个类型参数逆变：只可以被消费而不可以被生产。逆变类型的一个很好的例子是 <code>Comparable</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Comparable</span>&lt;<span class="title">in</span> <span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">operator fun <span class="title">compareTo</span><span class="params">(other: T)</span>: Int</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">fun <span class="title">demo</span><span class="params">(x: Comparable&lt;Number&gt;)</span> </span>&#123;</span><br><span class="line">    x.compareTo(<span class="number">1.0</span>) <span class="comment">// 1.0 拥有类型 Double，它是 Number 的子类型</span></span><br><span class="line">    <span class="comment">// 因此，我们可以将 x 赋给类型为 Comparable &lt;Double&gt; 的变量</span></span><br><span class="line">    val y: Comparable&lt;Double&gt; = x <span class="comment">// OK！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们相信 <code>in</code> 和<code>out</code>两词是自解释的（因为它们已经在 C# 中成功使用很长时间了）， 因此上面提到的助记符不是真正需要的。</p>
+<h2 id="3-2-使用处型变"><a href="#3-2-使用处型变" class="headerlink" title="3.2 使用处型变"></a>3.2 使用处型变</h2><h2 id="3-2-1-类型投影"><a href="#3-2-1-类型投影" class="headerlink" title="3.2.1 类型投影"></a>3.2.1 类型投影</h2><p>将类型参数 <code>T</code> 声明为 <code>out</code> 非常方便，并且能避免使用处子类型化的麻烦，但是有些类实际上不能限制为只返回 <code>T</code>！ 一个很好的例子是 <code>Array</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Array&lt;T&gt;(val size: Int) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">get</span><span class="params">(index: Int)</span>: T </span>&#123; …… &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">set</span><span class="params">(index: Int, value: T)</span> </span>&#123; …… &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该类在 <code>T</code> 上既不能是协变的也不能是逆变的。这造成了一些不灵活性。考虑下述函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fun <span class="title">copy</span><span class="params">(from: Array&lt;Any&gt;, to: Array&lt;Any&gt;)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">assert</span>(from.size == to.size)</span><br><span class="line">    <span class="keyword">for</span> (i in from.indices)</span><br><span class="line">        to[i] = from[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个函数应该将项目从一个数组复制到另一个数组。让我们尝试在实践中应用它：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val ints: Array&lt;Int&gt; = arrayOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">val any = Array&lt;Any&gt;(<span class="number">3</span>) &#123; <span class="string">""</span> &#125;</span><br><span class="line">copy(ints, any)</span><br><span class="line"><span class="comment">// 其类型为 Array&lt;Int&gt; 但此处期望 Array&lt;Any&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里我们遇到同样熟悉的问题：<code>Array &lt;T&gt;</code> 在<code>T</code> 上是不型变的，因此 <code>Array &lt;Int&gt;</code> 和 <code>Array &lt;Any&gt;</code> 都不是另一个的子类型。为什么？ 再次重复，因为 <code>copy</code> 可能做坏事，也就是说，例如它可能尝试写一个 <code>String</code>到<code>from</code>， 并且如果我们实际上传递一个 <code>Int</code>的数组，一段时间后将会抛出一个 <code>ClassCastException</code> 异常。</p>
+<p>那么，我们唯一要确保的是 <code>copy()</code> 不会做任何坏事。我们想阻止它写到 <code>from</code>，我们可以：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fun <span class="title">copy</span><span class="params">(from: Array&lt;out Any&gt;, to: Array&lt;Any&gt;)</span> </span>&#123; …… &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里发生的事情称为类型投影：我们说<code>from</code>不仅仅是一个数组，而是一个受限制的（投影的）数组：我们只可以调用返回类型为类型参数 <code>T</code> 的方法，如上，这意味着我们只能调用 <code>get()</code>。这就是我们的使用处型变的用法，并且是对应于 <code>Java</code> 的 <code>Array&lt;? extends Object&gt;</code>、 但使用更简单些的方式。</p>
+<p>你也可以使用<code>in</code>投影一个类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fun <span class="title">fill</span><span class="params">(dest: Array&lt;in String&gt;, value: String)</span> </span>&#123; …… &#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Array&lt;in String&gt;</code> 对应于 Java 的 <code>Array&lt;? super String&gt;</code>，也就是说，你可以传递一个 <code>CharSequence</code> 数组或一个 <code>Object</code> 数组给 <code>fill()</code> 函数。</p>
+<h3 id="3-2-2-星投影"><a href="#3-2-2-星投影" class="headerlink" title="3.2.2 星投影"></a>3.2.2 星投影</h3><p>有时你想说，你对类型参数一无所知，但仍然希望以安全的方式使用它。 这里的安全方式是定义泛型类型的这种投影，该泛型类型的每个具体实例化将是该投影的子类型。</p>
+<p>Kotlin 为此提供了所谓的星投影语法：</p>
+<ul>
+<li>对于 <code>Foo &lt;out T : TUpper&gt;</code>，其中 <code>T</code> 是一个具有上界 <code>TUpper</code> 的协变类型参数，<code>Foo &lt;*&gt;</code> 等价于 <code>Foo &lt;out TUpper&gt;</code>。 这意味着当 <code>T</code> 未知时，你可以安全地从 <code>Foo &lt;*&gt;</code> 读取 <code>TUpper</code> 的值。</li>
+<li>对于 <code>Foo &lt;in T&gt;</code>，其中 <code>T</code> 是一个逆变类型参数，<code>Foo &lt;*&gt;</code> 等价于 <code>Foo &lt;in Nothing&gt;</code>。 这意味着当 <code>T</code> 未知时，没有什么可以以安全的方式写入 <code>Foo &lt;*&gt;</code>。</li>
+<li>对于 <code>Foo &lt;T : TUpper&gt;</code>，其中 T 是一个具有上界 TUpper 的不型变类型参数，<code>Foo&lt;*&gt;</code> 对于读取值时等价于 <code>Foo&lt;out TUpper&gt;</code> 而对于写值时等价于 <code>Foo&lt;in Nothing&gt;</code>。</li>
+</ul>
+<p>如果泛型类型具有多个类型参数，则每个类型参数都可以单独投影。 例如，如果类型被声明为 <code>interface Function &lt;in T, out U&gt;</code>，我们可以想象以下星投影：</p>
+<ul>
+<li><code>Function&lt;*, String&gt;</code> 表示 <code>Function&lt;in Nothing, String&gt;</code>；</li>
+<li><code>Function&lt;Int, *&gt;</code> 表示 <code>Function&lt;Int, out Any?&gt;</code>；</li>
+<li><code>Function&lt;*, *&gt;</code> 表示 <code>Function&lt;in Nothing, out Any?&gt;</code>。</li>
+</ul>
+<blockquote>
+<p>注意：星投影非常像 Java 的原始类型，但是安全。</p>
+</blockquote>
+<h2 id="3-3-泛型函数"><a href="#3-3-泛型函数" class="headerlink" title="3.3 泛型函数"></a>3.3 泛型函数</h2><p>不仅类可以有类型参数。函数也可以有。类型参数要放在函数名称之前：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; &#123;</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun &lt;T&gt; T.basicToString(): String &#123;  <span class="comment">// 扩展函数</span></span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要调用泛型函数，在调用处函数名之后指定类型参数即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val l = singletonList&lt;Int&gt;(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>可以省略能够从上下文中推断出来的类型参数，所以以下示例同样适用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val l = singletonList(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-枚举类"><a href="#4-枚举类" class="headerlink" title="4. 枚举类"></a>4. 枚举类</h1><p>枚举类的最基本的用法是实现类型安全的枚举：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">Direction</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    NORTH, SOUTH, WEST, EAST</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每个枚举常量都是一个对象。枚举常量用逗号分隔。</p>
+<h2 id="4-1-初始化"><a href="#4-1-初始化" class="headerlink" title="4.1 初始化"></a>4.1 初始化</h2><p>因为每一个枚举都是枚举类的实例，所以他们可以是这样初始化过的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">enum</span> class <span class="title">Color</span><span class="params">(val rgb: Int)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        RED(<span class="number">0xFF0000</span>),</span><br><span class="line">        GREEN(<span class="number">0x00FF00</span>),</span><br><span class="line">        BLUE(<span class="number">0x0000FF</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-匿名类"><a href="#4-2-匿名类" class="headerlink" title="4.2 匿名类"></a>4.2 匿名类</h2><p>枚举常量还可以声明其带有相应方法以及覆盖了基类方法的匿名类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">ProtocolState</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    WAITING &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">signal</span><span class="params">()</span> </span>= TALKING</span><br><span class="line">    &#125;,</span><br><span class="line">    TALKING &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">signal</span><span class="params">()</span> </span>= WAITING</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> fun <span class="title">signal</span><span class="params">()</span>: ProtocolState</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果枚举类定义任何成员，那么使用分号将成员定义中的枚举常量定义分隔开。</p>
+<p>枚举条目不能包含内部类以外的嵌套类型（已在<code>Kotlin 1.2</code>中弃用）。</p>
+<h2 id="4-3-在枚举类中实现接口"><a href="#4-3-在枚举类中实现接口" class="headerlink" title="4.3 在枚举类中实现接口"></a>4.3 在枚举类中实现接口</h2><p>一个枚举类可以实现接口（但不能从类继承），可以为所有条目提供统一的接口成员实现，也可以在相应匿名类中为每个条目提供各自的实现。只需将接口添加到枚举类声明中即可，如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">enum class IntArithmetics : BinaryOperator&lt;Int&gt;, IntBinaryOperator &#123;</span><br><span class="line"></span><br><span class="line">    PLUS &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">apply</span><span class="params">(t: Int, u: Int)</span>: Int </span>= t + u</span><br><span class="line">    &#125;,</span><br><span class="line">    TIMES &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">apply</span><span class="params">(t: Int, u: Int)</span>: Int </span>= t * u</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function">override fun <span class="title">applyAsInt</span><span class="params">(t: Int, u: Int)</span> </span>= apply(t, u)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-4-使用枚举常量"><a href="#4-4-使用枚举常量" class="headerlink" title="4.4 使用枚举常量"></a>4.4 使用枚举常量</h2><p>Kotlin 中的枚举类也有合成方法允许列出定义的枚举常量以及通过名称获取枚举常量。这些方法的签名如下（假设枚举类的名称是 <code>EnumClass</code>）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EnumClass.valueOf(value: String): EnumClass</span><br><span class="line"></span><br><span class="line">EnumClass.values(): Array&lt;EnumClass&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果指定的名称与类中定义的任何枚举常量均不匹配，<code>valueOf()</code> 方法将抛出 <code>IllegalArgumentException</code> 异常。</p>
+<p>自 <code>Kotlin 1.1</code> 起，可以使用 <code>enumValues&lt;T&gt;()</code> 与 <code>enumValueOf&lt;T&gt;()</code> 函数以泛型的方式访问枚举类中的常量 ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">RGB</span> </span>&#123; RED, GREEN, BLUE &#125;</span><br><span class="line"></span><br><span class="line">inline fun &lt;reified T : Enum&lt;T&gt;&gt; printAllValues() &#123;</span><br><span class="line"></span><br><span class="line">    print(enumValues&lt;T&gt;().joinToString &#123; it.name &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printAllValues&lt;RGB&gt;() <span class="comment">// 输出 RED, GREEN, BLUE</span></span><br></pre></td></tr></table></figure>
+
+<p>每个枚举常量都具有在枚举类声明中获取其名称与位置的属性：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val name: String</span><br><span class="line">val ordinal: Int</span><br></pre></td></tr></table></figure>
+
+<p>枚举常量还实现了 <code>Comparable</code> 接口， 其中自然顺序是它们在枚举类中定义的顺序。</p>
+<h1 id="5-内联类"><a href="#5-内联类" class="headerlink" title="5. 内联类"></a>5. 内联类</h1><blockquote>
+<p>内联类仅在 <code>Kotlin 1.3</code> 之后版本可用，目前还是实验性的，本文中简单介绍一下内联类，详细使用等稳定后再总结</p>
+</blockquote>
+<p>有时候，业务逻辑需要围绕某种类型创建包装器。然而，由于额外的堆内存分配问题，它会引入运行时的性能开销。此外，如果被包装的类型是原生类型，性能的损失是很糟糕的，因为原生类型通常在运行时就进行了大量优化，然而他们的包装器却没有得到任何特殊的处理。</p>
+<p>为了解决这类问题，Kotlin 引入了一种被称为 <code>内联类</code> 的特殊类，它通过在类的前面定义一个 <code>inline</code> 修饰符来声明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">inline class <span class="title">Password</span><span class="params">(val value: String)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>内联类必须含有唯一的一个属性在主构造函数中初始化。在运行时，将使用这个唯一属性来表示内联类的实例（关于运行时的内部表达请参阅下文）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不存在 'Password' 类的真实实例对象</span></span><br><span class="line"><span class="comment">// 在运行时，'securePassword' 仅仅包含 'String'</span></span><br><span class="line">val securePassword = Password(<span class="string">"Don't try this in production"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这就是内联类的主要特性，它灵感来源于 <code>inline</code> 这个名称：类的数据被 “内联”到该类使用的地方（类似于内联函数中的代码被内联到该函数调用的地方）。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-02-21T03:06:54.216Z" itemprop="dateUpdated">2020-02-21 11:06:54</time>
+</span><br>
+
+
+        
+        记录历程，回首过去，抓住点滴，迎接未来。进步就在于一行行没有被遗忘的代码，成功就在于一页页没有被踩死的文章。感谢您的支持，我是程序猿，我为梦想带盐！
+        
+    </div>
+    
+    <footer>
+        <a href="http://hwb0011.github.io">
+            <img src="/img/avatar.jpg" alt="黄文镔">
+            黄文镔
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/" rel="tag">Kotlin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/&title=《Kotlin征途（七）：特殊的类》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/&title=《Kotlin征途（七）：特殊的类》 — 黄文镔的博客&source=
+本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（七）：特殊的类》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Kotlin征途（八）：委托</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%A7%E6%89%BF%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%89%A9%E5%B1%95/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Kotlin征途（六）：继承、接口、扩展</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '50c13be55e1505e5d611',
+          clientSecret: 'c81100c6fe66b456bbb56de82cb5b8cb835503d4',
+          repo: 'hwb0011.github.io',
+          owner: 'hwb0011',
+          admin: ['hwb0011'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄文镔 &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/&title=《Kotlin征途（七）：特殊的类》 — 黄文镔的博客&pic=http://hwb0011.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/&title=《Kotlin征途（七）：特殊的类》 — 黄文镔的博客&source=
+本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（七）：特殊的类》 — 黄文镔的博客&url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/&via=http://hwb0011.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://hwb0011.github.io/2019/12/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEi0lEQVR42u3aO27jQBAFQN//0t7UG8h6r5sGOFQpMgyJ5BSD/n59xZ/vH59X/88/P3/76vq//+rV8yRPnvxq+MGECRMmTLdkyo+U3Cw/avL99pAJYntHTJgwYcL0DKbNgYubLY6aXz9JYvKzY8KECROmT2a6NvDnHLPEZZbWYMKECROmT2NKguuwvPw1tM/+MyukMWHChAnT85ja0WN7pGuHl23ROyvdMWHChAnTM5jakPykv/9kvwkTJkyYMN2G6Xvxya82e5J8PJkX57NTY8KECROmc5nyIV/S3v07xJZstr6DCRMmTJieyjRbhckfcdZOzbmv/f8wc8GECRMmTLdkypOANtgnj7IpSvMX1j7Pm80mTJgwYcJ0IFPys1m6kAT72RpQ/iJnz/OmF44JEyZMmI5lmh2sDfyr8FwC7X+FCRMmTJjOZcpDcnuD2XrNbH3nqkWfN9fEhAkTJkwHMrUlaBE+g+ZvXtBuSvH9jBITJkyYMJ3L1A4RkyCahPY2nOeLOO258peECRMmTJjOZdqE0qsKztkYcpZMtA1oTJgwYcJ0LlM78Nuv7MyGi7Ploc11MGHChAnTM5jaVGADOmsEt4tEeWLRNqwxYcKECdOJTG1CsB9Azu6bHOl3oBZulTdhwoQJE6bbMLUN0Jxsxp20g/MkZlM2F11wTJgwYcJ0e6b2opvW6r7lmq8H/cU6ESZMmDBhOpFpNobMS9y8KJ2NPK9qXr9xwIQJEyZMBzJtBo2zoJsQ5C3gPEWYvdSXvXBMmDBhwnQIUzuYbNuv7a+iPaP4O/nrKdq7mDBhwoTpKKa2zbppnm7awZvr5Pd6+RowYcKECdOxTLNA2xa3bbN1E9qHx25bw5gwYcKE6SimdhjZpgV5WZsnKC1EkkxgwoQJE6anMs3GjZtFn/0+TII1e+V1GoEJEyZMmI5lyoN0crOrGq/5ck/78laFOiZMmDBhuiVTG2g3K6QtWf6E7Ti2TQswYcKECdMzmDaBc5ME5A3WnCxv70atXkyYMGHC9CCmv1g2bbGStKAdQH6PPkU1jwkTJkyYbsm0oUmO0aYLM9A8tM+SG0yYMGHCdC5TPqqMSsSSrJ2szhq4m/Y0JkyYMGF6ElPe5J0t9CSLPkUWUzaUZ+PS/5q8mDBhwoTpcKb8ABfcuGwQ59Cz8eebb2LChAkTpmOZ2pC/GS626cLs8LOWblSQY8KECROmA5miFueIIKGclbLJ4WdPvuouY8KECROm2zPlizVJubtpwrbt5nYUWr9gTJgwYcJ0LFMC1A4F87HlVTR5QjBLjzBhwoQJ07lM3+WnHWTOgn3+emavIW8BR/kRJkyYMGG6MdP+GJtLt8SbMepVrxMTJkyYMJ3ItNn6mS25tktC7V2SIrzmw4QJEyZMhzPlTc9Z47XoNC8IZu3d6PqYMGHChOkDmHKIPPS2ZfDv38yb1PnyKyZMmDBh+hymtlxMvp8UtPsUoR3Qvpz9YsKECROmY5nyYrVdr8lD8ia0z5rOmDBhwoTpE5hmDdBNGZxcJ08LZk+4aRxjwoQJE6ZDmP4BbGVOz/tGC18AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
