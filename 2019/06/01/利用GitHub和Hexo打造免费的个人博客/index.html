@@ -39,16 +39,15 @@
     
     <link rel="shortcut icon" href="/img/avatar.jpg">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
-    <script>window.lazyScripts=[]</script>
-
-    <!-- custom head -->
-    
-
     <script>
+      window.lazyScripts=[];
       // 判断非本机且未使用 https 时，强制重定向到 https。
       if ((!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
           window.location = window.location.toString().replace(/^http:/, "https:");
     </script>
+
+    <!-- custom head -->
+    
 
 <meta name="generator" content="Hexo 4.1.0"></head>
 
