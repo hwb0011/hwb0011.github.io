@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Kotlin征途（九）：对象表达式、对象声明、伴生对象 | 黄文镔的博客 | 完美运用所学的一切</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#212121">
+    
+    
+    <meta name="keywords" content="Kotlin,Android,编程">
+    <meta name="description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin征途（九）：对象表达式、对象声明、伴生对象">
+<meta property="og:url" content="https:&#x2F;&#x2F;coder-ice.gitee.io&#x2F;2020&#x2F;01&#x2F;01&#x2F;Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1&#x2F;index.html">
+<meta property="og:site_name" content="黄文镔的博客">
+<meta property="og:description" content="本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。">
+<meta property="article:published_time" content="2020-01-01T03:28:35.000Z">
+<meta property="article:modified_time" content="2020-03-19T08:06:34.287Z">
+<meta property="article:author" content="黄文镔">
+<meta property="article:tag" content="Kotlin">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="黄文镔的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.1.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄文镔</h5>
+          <a href="mailto:2509246913@qq.com" title="2509246913@qq.com" class="mail">2509246913@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hwb0011" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/hwb0011" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Kotlin征途（九）：对象表达式、对象声明、伴生对象</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Kotlin征途（九）：对象表达式、对象声明、伴生对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-01-01T03:28:35.000Z" itemprop="datePublished" class="page-time">
+  2020-01-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Kotlin%E5%BE%81%E9%80%94/">Kotlin征途</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-对象表达式"><span class="post-toc-text">1. 对象表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-对象表达式的基本格式"><span class="post-toc-text">1.1 对象表达式的基本格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-对象表达式的使用场景"><span class="post-toc-text">1.2 对象表达式的使用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-作用域"><span class="post-toc-text">1.3 作用域</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-对象声明-单例模式"><span class="post-toc-text">2. 对象声明(单例模式)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-对象声明-单例模式-的格式"><span class="post-toc-text">2.1 对象声明(单例模式)的格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-与对象表达式的异同"><span class="post-toc-text">2.2 与对象表达式的异同</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-伴生对象"><span class="post-toc-text">3. 伴生对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-伴生对象的用法"><span class="post-toc-text">3.1 伴生对象的用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-主要使用场景"><span class="post-toc-text">3.2 主要使用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-注意伴生对象只是对象"><span class="post-toc-text">3.3 注意伴生对象只是对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-对象表达式、对象声明、伴生对象之间的语义差异"><span class="post-toc-text">4. 对象表达式、对象声明、伴生对象之间的语义差异</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Kotlin征途（九）：对象表达式、对象声明、伴生对象"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Kotlin征途（九）：对象表达式、对象声明、伴生对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-01-01 11:28:35" datetime="2020-01-01T03:28:35.000Z"  itemprop="datePublished">2020-01-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Kotlin%E5%BE%81%E9%80%94/">Kotlin征途</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角叙述相关内容，同时将与Java语言有所联系。  </p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-对象表达式"><a href="#1-对象表达式" class="headerlink" title="1. 对象表达式"></a>1. 对象表达式</h1><h2 id="1-1-对象表达式的基本格式"><a href="#1-1-对象表达式的基本格式" class="headerlink" title="1.1 对象表达式的基本格式"></a>1.1 对象表达式的基本格式</h2><p>对象表达式的最基本格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">object &#123;</span><br><span class="line">    <span class="keyword">var</span> title: String = <span class="string">"对象表达式的基本格式"</span></span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">changeTitle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      title = <span class="string">"对象已改变"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对象可以继承于某个基类，或者实现其他接口:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">open class <span class="title">A</span><span class="params">(x: Int)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> open val y: Int = x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;……&#125;</span><br><span class="line"></span><br><span class="line">val ab: A = object : A(<span class="number">1</span>), B &#123;</span><br><span class="line">    override val y = <span class="number">15</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-对象表达式的使用场景"><a href="#1-2-对象表达式的使用场景" class="headerlink" title="1.2 对象表达式的使用场景"></a>1.2 对象表达式的使用场景</h2><p>看过了对象表达式的基本格式后，是不是觉得很眼熟？没错，我在<a href="https://coder-ice.gitee.io/2019/11/01/Kotlin征途（五）：Kotlin类和对象/">Kotlin征途（五）：Kotlin类和对象</a>中写的匿名内部类就是使用了对象表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">"成员属性"</span></span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">setInterFace</span><span class="params">(test: TestInterFace)</span> </span>&#123;</span><br><span class="line">        test.test()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TestInterFace</span> </span>&#123;</span><br><span class="line">    <span class="function">fun <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">(args: Array&lt;String&gt;)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> test = Test()</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 采用对象表达式来创建接口对象，即匿名内部类的实例。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    test.setInterFace(object : TestInterFace &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            println(<span class="string">"对象表达式创建匿名内部类的实例"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-作用域"><a href="#1-3-作用域" class="headerlink" title="1.3 作用域"></a>1.3 作用域</h2><p>匿名对象可以用作只在本地和私有作用域中声明的类型。如果你使用匿名对象作为公有函数的返回类型或者用作公有属性的类型，那么该函数或属性的实际类型会是匿名对象声明的超类型，如果你没有声明任何超类型，就会是 <code>Any</code>。在匿名对象中添加的成员将无法访问。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 私有函数，所以其返回类型是匿名对象类型</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> fun <span class="title">foo</span><span class="params">()</span> </span>= object &#123;</span><br><span class="line">        val x: String = <span class="string">"x"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 公有函数，所以其返回类型是 Any</span></span><br><span class="line">    <span class="function">fun <span class="title">publicFoo</span><span class="params">()</span> </span>= object &#123;</span><br><span class="line">        val x: String = <span class="string">"x"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        val x1 = foo().x        <span class="comment">// 没问题</span></span><br><span class="line">        val x2 = publicFoo().x  <span class="comment">// 错误：未能解析的引用“x”</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在对象表达中可以方便的访问到作用域中的其他变量:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fun <span class="title">countClicks</span><span class="params">(window: JComponent)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clickCount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> enterCount = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    window.addMouseListener(object : MouseAdapter() &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">mouseClicked</span><span class="params">(e: MouseEvent)</span> </span>&#123;</span><br><span class="line">            clickCount++</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function">override fun <span class="title">mouseEntered</span><span class="params">(e: MouseEvent)</span> </span>&#123;</span><br><span class="line">            enterCount++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-对象声明-单例模式"><a href="#2-对象声明-单例模式" class="headerlink" title="2. 对象声明(单例模式)"></a>2. 对象声明(单例模式)</h1><h2 id="2-1-对象声明-单例模式-的格式"><a href="#2-1-对象声明-单例模式-的格式" class="headerlink" title="2.1 对象声明(单例模式)的格式"></a>2.1 对象声明(单例模式)的格式</h2><p><code>Kotlin</code> 使用 <code>object</code> 关键字来声明一个对象。我们可以方便的通过对象声明来获得一个单例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">object DataProviderManager &#123;</span><br><span class="line">    <span class="function">fun <span class="title">registerDataProvider</span><span class="params">(provider: DataProvider)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ……</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    val allDataProviders: Collection&lt;DataProvider&gt;</span><br><span class="line">        get() = <span class="comment">// ……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在<code>Kotlin</code>中引用该对象，我们直接使用其名称即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataProviderManager.registerDataProvider(……)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>Java</code>中则需要特殊使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataProviderManager.INSTANCE.registerDataProvider(……)</span><br></pre></td></tr></table></figure>
+
+<p>当然你也可以定义一个变量来获取获取这个对象，当时当你定义两个不同的变量来获取这个对象时，你会发现你并不能得到两个不同的变量。也就是说通过这种方式，我们获得一个单例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data1 = DataProviderManager</span><br><span class="line"><span class="keyword">var</span> data2 = DataProviderManager</span><br><span class="line">data1.name = <span class="string">"test"</span></span><br><span class="line">print(<span class="string">"data1 name = $&#123;data2.name&#125;"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-与对象表达式的异同"><a href="#2-2-与对象表达式的异同" class="headerlink" title="2.2 与对象表达式的异同"></a>2.2 与对象表达式的异同</h2><p>与对象表达式相同的是，对象可以有超类型，可以实现接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">object DefaultListener : MouseAdapter(), MouseInterface &#123;</span><br><span class="line">    <span class="function">override fun <span class="title">mouseClicked</span><span class="params">(e: MouseEvent)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ……</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">mouseEntered</span><span class="params">(e: MouseEvent)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ……</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>与对象表达式不同，当对象声明在另一个类的内部时，这个对象并不能通过外部类的实例访问到该对象，而只能通过类名来访问，同样该对象也不能直接访问到外部类的方法和变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">"Mike"</span></span><br><span class="line">    object Book&#123;</span><br><span class="line">        <span class="keyword">var</span> count = <span class="number">3</span></span><br><span class="line">        <span class="function">fun <span class="title">showName</span><span class="params">()</span></span>&#123;</span><br><span class="line">            print&#123;<span class="string">"show name: $name"</span>&#125; <span class="comment">// 错误，不能访问到外部类的方法和变量</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">fun <span class="title">main</span><span class="params">(args: Array&lt;String&gt;)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> student = Student()</span><br><span class="line">    student.Book.count <span class="comment">// 错误，不能通过外部类的实例访问到该对象</span></span><br><span class="line">    Student.Book.count <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-伴生对象"><a href="#3-伴生对象" class="headerlink" title="3. 伴生对象"></a>3. 伴生对象</h1><h2 id="3-1-伴生对象的用法"><a href="#3-1-伴生对象的用法" class="headerlink" title="3.1 伴生对象的用法"></a>3.1 伴生对象的用法</h2><p>类内部的对象声明可以用 <code>companion</code> 关键字标记，这样它就与外部类关联在一起，我们就可以直接通过外部类访问到对象的内部元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    companion object Factory &#123;</span><br><span class="line">        <span class="function">fun <span class="title">create</span><span class="params">()</span>: MyClass </span>= MyClass()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val instance = MyClass.create()   <span class="comment">// 访问到对象的内部元素</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以省略掉该对象的对象名，然后使用 <code>Companion</code> 替代需要声明的对象名：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    companion object &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val x = MyClass.Companion   <span class="comment">// 可以看做单例模式的另一个表现方式</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：一个类里面只能声明一个内部关联对象，即关键字 <code>companion</code> 只能使用一次。</p>
+<h2 id="3-2-主要使用场景"><a href="#3-2-主要使用场景" class="headerlink" title="3.2 主要使用场景"></a>3.2 主要使用场景</h2><p>首先，从伴生对象的声明和基本使用就可以看出，伴生对象可以用来表示一个单例，不过得把类的构造方法用<code>private</code>修饰一下。</p>
+<p>而另一个主要的用法就是持有静态变量。相信聪明的你已经注意到了，<code>Kotlin</code>中没有<code>static</code>关键字，这让静态变量无法在<code>Kotlin</code>中快乐的玩耍了，不过伴生对象帮了我们一个忙。由于伴生对象在一个类中只存在一个，与静态变量的性质类似，这样我们给伴生对象添加的变量和方法就可以当做静态变量和静态方法使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    companion object &#123;</span><br><span class="line">        <span class="keyword">var</span> myVar = <span class="string">"var"</span></span><br><span class="line">        <span class="function">fun <span class="title">myFun</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val x = MyClass.Companion.myVar</span><br><span class="line">MyClass.Companion.myFun()</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-注意伴生对象只是对象"><a href="#3-3-注意伴生对象只是对象" class="headerlink" title="3.3 注意伴生对象只是对象"></a>3.3 注意伴生对象只是对象</h2><p>虽然伴生对象看起来像单例，伴生对象的成员看起来像其他语言的静态成员，但在运行时他们仍然是真实对象的实例成员。例如还可以实现接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Factory</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">fun <span class="title">create</span><span class="params">()</span>: T</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">class MyClass </span>&#123;</span><br><span class="line">    companion object : Factory&lt;MyClass&gt; &#123;</span><br><span class="line">        <span class="function">override fun <span class="title">create</span><span class="params">()</span>: MyClass </span>= MyClass()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-对象表达式、对象声明、伴生对象之间的语义差异"><a href="#4-对象表达式、对象声明、伴生对象之间的语义差异" class="headerlink" title="4. 对象表达式、对象声明、伴生对象之间的语义差异"></a>4. 对象表达式、对象声明、伴生对象之间的语义差异</h1><p>表达式、对象声明、伴生对象之间有一个重要的语义差别：</p>
+<ul>
+<li><p>对象表达式是在使用他们的地方立即执行的</p>
+</li>
+<li><p>对象声明是在第一次被访问到时延迟初始化的</p>
+</li>
+<li><p>伴生对象的初始化是在相应的类被加载（解析）时，与 Java 静态初始化器的语义相匹配</p>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-03-19T08:06:34.287Z" itemprop="dateUpdated">2020-03-19 16:06:34</time>
+</span><br>
+
+
+        
+        记录历程，回首过去，抓住点滴，迎接未来。进步就在于一行行没有被遗忘的代码，成功就在于一页页没有被踩死的文章。感谢您的支持，我是程序猿，我为梦想带盐！
+        
+    </div>
+    
+    <footer>
+        <a href="https://coder-ice.gitee.io">
+            <img src="/img/avatar.jpg" alt="黄文镔">
+            黄文镔
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/" rel="tag">Kotlin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/&title=《Kotlin征途（九）：对象表达式、对象声明、伴生对象》 — 黄文镔的博客&pic=https://coder-ice.gitee.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/&title=《Kotlin征途（九）：对象表达式、对象声明、伴生对象》 — 黄文镔的博客&source=
+本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（九）：对象表达式、对象声明、伴生对象》 — 黄文镔的博客&url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/&via=https://coder-ice.gitee.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/15/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E5%A7%94%E6%89%98/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Kotlin征途（八）：委托</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.zhimg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '50c13be55e1505e5d611',
+          clientSecret: 'c81100c6fe66b456bbb56de82cb5b8cb835503d4',
+          repo: 'hwb0011.github.io',
+          owner: 'hwb0011',
+          admin: ['hwb0011'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄文镔 &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/&title=《Kotlin征途（九）：对象表达式、对象声明、伴生对象》 — 黄文镔的博客&pic=https://coder-ice.gitee.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/&title=《Kotlin征途（九）：对象表达式、对象声明、伴生对象》 — 黄文镔的博客&source=
+本文将伴随大家进入Kotlin语言的正式学习生涯中，希望大家不要半途而废哦！笔者将Kotlin用于Android开发中，因此将从Android开发的视角..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin征途（九）：对象表达式、对象声明、伴生对象》 — 黄文镔的博客&url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/&via=https://coder-ice.gitee.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://coder-ice.gitee.io/2020/01/01/Kotlin%E5%BE%81%E9%80%94%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E%E3%80%81%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuCAAAAACEya1TAAAGz0lEQVR42u3cwW7bSBAEUP3/TzvYXG2OqrpHARZ+PAWyRM684aHQ3cjrFV9ff69XeX3/1de36/s3v//76Vfne86ee77D3gQ3bty4cePGnaCcN5Z/ngMla2gPYLbC85Enn+R7x40bN27cuHEn3Ofoc17cOUglKPl6zr9NnnveY7ue+re4cePGjRs37kvcOXQbAes4Vd6zDb7JgeHGjRs3bty4/1/cbUzMw2Jy51vNs9l+cePGjRs3btwb7k1jadZgSwpPs2/uQ+qtPeLGjRs3bty4F9WeV1IG8u/zkVy4sOLGjRs37l/J/VVes2JTOyqUlJA2Yz2boJaHvx+eghs3bty4ceMOKidJWaoNiLMQOVvD/iVoWTfrwY0bN27cuHHnczJ5c6vd2Kz1NYtcxZBN/KzZeNAbdNy4cePGjRt3UKL63HBMPjCUHFgb15Jj3ow3vTHBjRs3bty4ccfcedFq00DatNby9lsbIvMw2g73PAZB3Lhx48aNG/fDLvI41YbFWfmpLRu1I0GzaLi557Avhxs3bty4cf9i7jbktSWnNswlG6vHaMqBnltWPwRB3Lhx48aNG/cxcW3aQslv81bWpvW1b9rNDqYufuHGjRs3bty4S+78x3nxKNnYphSV72U2kHStqIcbN27cuHHjDio5+YLass4+cm1GgmaHvSm6XdgYbty4cePG/cu48+jWFq3a+ycbzj+JikSLCDgc/cGNGzdu3LhxL7jzwZc2MkaDL+UB5DSzstosAuLGjRs3bty4W+5NSegcvPLj3DTqZt/fNM+Grw5u3Lhx48aNO+gZ3WoUtYFyU37KG2b/vnn2ppCHGzdu3Lhx4w5KVLNw1karTTmseIMWTLPGYdRcxI0bN27cuHHH3O0gTjtA08aydtwnHzyaHeTmGB57lbhx48aNGzfutFZT/Ef/eSxrY98scp3vc6t51u4ON27cuHHjxp0nkLYsNYtcySeziLaPnnn5abYG3Lhx48aNG/eee1ZIarPQZgwoJ5h90jYU3+wLN27cuHHjxj3i3mw1/+usBdWi50NLtw7j8Ve4cePGjRs37odfJYGsbSltDmNWPEo+b5tnMwfcuHHjxo0b94Y7j0RR8SVuxeUBdDWXFB/23Se+OVrcuHHjxo0bd8A9a0TlhZ7z99tCVTuy047ptNF22DzDjRs3bty4cT+UqDaFqlljKQdN1tPG2bzYlA80vwnHuHHjxo0bN+6YO28I5e2otnmW36ElmBXjZkHw8ZXCjRs3bty4cQfcbbuoLTBdG4gpy09tc252hMWrgxs3bty4ceMeqeZlo7zYtIGeoWzC4qywNUTHjRs3bty4cQcFlzY25YM1m1DYrrAdJ2r3krcDcePGjRs3btxn7tni8iW2W721nja8bg64Dn+4cePGjRs37qBOkjeZ2sB0C25WEmrD674M93g8uHHjxo0bN+4gySQEs0JPW3jKm2GzOlx7n/z1KsIobty4cePGjfth15vxlxnWvjE2C5dJHMwLUslTfngWbty4cePGjTuowMy2ty/05LGs/f5sJTnrLOzixo0bN27cuM9rOC/9dbzaMJR/nneaZoFv80l+PI/vNW7cuHHjxo07mMPZLHrToNq04vJV3W2e5bEYN27cuHHjxp1z5wMx+dJnha22xbU5jE8U46Kwixs3bty4ceOO17xHSf7alr02YzebEaJZcsONGzdu3Lhxb7jzBye3nsXBtvj1ucZY3jybrR83bty4cePGnXC3hae7USmPfZ/rQLUHMDPEjRs3bty4cW+4E/Rb5Z5bxa9N82wWZ4un48aNGzdu3LgD7g1EEhbz0k9bDNo0z9qYOBsqetM8w40bN27cuHF/+1WyybbB1oazWURri2KbY2hfmkcl3Lhx48aNG/eIOy/KvOKrRWljX/v0/VhPvSrcuHHjxo0b97FaMlvoDHTWEssbWm3IG4a5WWELN27cuHHjxl32gNqRnc2ITx4NZwe/WeGtNePGjRs3bty4N9xJaEuGfmbH81pfs7Gbzx12sWjcuHHjxo3713Nvij550JmVk/KDzI9t8xol+3qzHty4cePGjRv3pcSVh6f8ePJGWt5aO78EbclsU2hboePGjRs3bty/mHtWeEqw8jg1C215WSo5pBZuGJRx48aNGzdu3AF3G4/apSTbaCnzxtg+pF7rVeLGjRs3bty4L3HnC5p9v23O7Rtd+ZpnRasfvokbN27cuHHj/gD3LIrVi4vj193m2ebFerN+3Lhx48aNG3fAvWmetQT7RtS+ebbZxeqYcePGjRs3btxpInrtF50saH/PvJjVHlI7inShnYYbN27cuHHj/u/6A4akX1sQgDIlAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
